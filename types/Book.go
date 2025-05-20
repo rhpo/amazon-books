@@ -5,7 +5,8 @@ import (
 )
 
 type Book struct {
-	ID, Pages int
+	ID    string // because it may start with "0"
+	Pages int
 
 	Title, Cover, Description,
 	Language, Publisher string

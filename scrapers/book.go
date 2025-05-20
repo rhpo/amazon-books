@@ -1,27 +1,39 @@
 package scrapers
 
 import (
+	"os"
 	"strconv"
 	"strings"
 
 	. "amazon/types"
 	"amazon/utils"
 
-	"fmt"
-
 	htmltomarkdown "github.com/JohannesKaufmann/html-to-markdown/v2"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/nleeper/goment"
 )
 
-func FetchBook(id int) (*Book, error) {
+func FetchBook(id string) (*Book, error) {
 	var result Book = Book{}
 
-	var url string = "https://www.amazon.com/dp/" + fmt.Sprint(id)
+	var url string = "https://www.amazon.com/dp/" + id
 	content, error := utils.Fetch(url)
 
 	if error != nil {
 		return nil, error
+	}
+
+	file, err := os.Create("book.html")
+	if err != nil {
+		return nil, utils.Report("Failed to create file: book.html")
+	}
+	defer file.Close()
+	_, err = file.WriteString(content)
+	if err != nil {
+		return nil, utils.Report("Failed to write content to file: book.html")
+	}
+	if err := file.Close(); err != nil {
+		return nil, utils.Report("Failed to close file: book.html")
 	}
 
 	contentReader := strings.NewReader(content)
@@ -238,7 +250,9 @@ func FetchBook(id int) (*Book, error) {
 			return nil, utils.Report("Price text is empty")
 		}
 
-		priceText = strings.TrimSpace(strings.ReplaceAll(priceText, "from $", ""))
+		priceText = strings.TrimSpace(
+			strings.ReplaceAll(strings.ReplaceAll(priceText, "from", ""), "$", ""))
+
 		price, err := strconv.ParseFloat(strings.TrimSpace(priceText), 32)
 		if err != nil {
 			return nil, utils.Report("Failed to parse price value, " + err.Error())

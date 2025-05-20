@@ -30,16 +30,9 @@ func RegisterBookRoutes(router fiber.Router) {
 
 	// domain.com/books/book
 	router.Get("/:id", func(c *fiber.Ctx) error {
-		idStr := c.Params("id")
-		id, err := strconv.Atoi(idStr)
-
-		if err != nil {
-			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"error": "Invalid book ID",
-			})
-		}
-
+		id := c.Params("id")
 		book, error := scrapers.FetchBook(id)
+
 		if error != nil {
 			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
 				"error": "Book not found",
