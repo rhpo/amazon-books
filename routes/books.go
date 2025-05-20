@@ -2,22 +2,24 @@ package routes
 
 import (
 	"amazon/scrapers"
-	"amazon/types"
+	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 )
 
 // RegisterBookRoutes registers book-related routes to the provided router group.
 func RegisterBookRoutes(router fiber.Router) {
+
 	router.Get("/", func(c *fiber.Ctx) error {
 
-		id := c.Query("page")
-		if id == "" {
+		page, error := strconv.Atoi(c.Query("page"))
+		if error != nil {
 			return c.Status(fiber.StatusBadRequest).JSON(map[string]interface{}{
 				"error": "Missing 'page' query parameter",
 			})
 		}
-		books, error := scrapers.FetchBooks()
+
+		books, error := scrapers.FetchBooks(page)
 
 		if error != nil {
 			return error
@@ -26,9 +28,24 @@ func RegisterBookRoutes(router fiber.Router) {
 		return c.Status(fiber.StatusOK).JSON(books)
 	})
 
-	router.Get("/book", func(c *fiber.Ctx) error {
-		id := c.Query("id")
-		book := types.Book{}
+	// domain.com/books/book
+	router.Get("/:id", func(c *fiber.Ctx) error {
+		idStr := c.Params("id")
+		id, err := strconv.Atoi(idStr)
+
+		if err != nil {
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"error": "Invalid book ID",
+			})
+		}
+
+		book, error := scrapers.FetchBook(id)
+		if error != nil {
+			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
+				"error": "Book not found",
+				"err":   error.Error(),
+			})
+		}
 
 		return c.Status(fiber.StatusOK).JSON(book)
 	})

@@ -1,25 +1,33 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"github.com/joho/godotenv"
+	"amazon/routes"
 	"log"
 	"os"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/joho/godotenv"
 )
 
-func main() {
-
+func setup() {
 	err := godotenv.Load()
 
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+}
 
-	PORT := os.Getenv("PORT")
+func main() {
+	setup()
+
 	app := fiber.New()
+	PORT := os.Getenv("PORT")
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
+	// use the registerBookRoutes function to register the routes
+	routes.RegisterBookRoutes(app.Group("/books"))
+
+	app.Get("/", func(client *fiber.Ctx) error {
+		return client.SendFile("./index.html")
 	})
 
 	log.Fatal(app.Listen(":" + PORT))

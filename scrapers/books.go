@@ -3,6 +3,7 @@ package scrapers
 import (
 	. "amazon/types"
 	"amazon/utils"
+	"fmt"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
@@ -11,7 +12,7 @@ import (
 func FetchBooks(page int) (*[]BookThumbnail, error) {
 	var result []BookThumbnail = make([]BookThumbnail, 0)
 
-	url := "https://www.amazon.com/best-sellers-books-Amazon/zgbs/books?pg=" + (string)(page)
+	url := "https://www.amazon.com/best-sellers-books-Amazon/zgbs/books?pg=" + fmt.Sprint(page)
 	content, error := utils.Fetch(url)
 
 	if error != nil {

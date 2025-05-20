@@ -1,7 +1,14 @@
 package types
 
 type Author struct {
-	name  string
-	about string
-	image string
+	Name  string
+	About string
+	Image string
 }
+
+type AuthorThumbnail struct {
+	Name, Link, Image string
+}
+
+// type AuthorType string
+type AuthorType AuthorThumbnail

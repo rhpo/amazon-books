@@ -8,6 +8,8 @@ require (
 	github.com/Danny-Dasilva/CycleTLS/cycletls v0.0.0-20220620102923-c84d740b4757 // indirect
 	github.com/Danny-Dasilva/fhttp v0.0.0-20220524230104-f801520157d6 // indirect
 	github.com/Danny-Dasilva/utls v0.0.0-20220604023528-30cb107b834e // indirect
+	github.com/JohannesKaufmann/dom v0.2.0 // indirect
+	github.com/JohannesKaufmann/html-to-markdown/v2 v2.3.2 // indirect
 	github.com/PuerkitoBio/goquery v1.10.3 // indirect
 	github.com/RomainMichau/cloudscraper_go v0.4.1 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
@@ -21,7 +23,9 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
-	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/nleeper/goment v1.4.4 // indirect
+	github.com/rivo/uniseg v0.4.7 // indirect
+	github.com/tkuchiki/go-timezone v0.2.0 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect

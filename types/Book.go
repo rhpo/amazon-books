@@ -1,16 +1,25 @@
 package types
 
-type AuthorType string
+import (
+	"github.com/nleeper/goment"
+)
 
 type Book struct {
-	id, title string
-	author    AuthorType
-	rating    float32
+	ID, Pages int
+
+	Title, Cover, Description,
+	Language, Publisher string
+
+	Rating, Price float32
+
+	Authors   []AuthorType
+	PubDate   goment.DateTime
+	Dimension Dimention
 }
 
 type BookThumbnail struct {
 	ID, Link, Title, Cover string
 
-	Author AuthorType
-	Rating float32
+	Authors []AuthorType
+	Rating  float32
 }

@@ -20,6 +20,7 @@ func Fetch(url string) (string, error) {
 	return res.Body, nil
 }
 
-func Report(message string) {
-
+func Report(message string) error {
+	println(message)
+	return fmt.Errorf(message)
 }
