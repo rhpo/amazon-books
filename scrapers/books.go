@@ -29,7 +29,7 @@ func FetchBooks(page int) (*[]BookThumbnail, error) {
 
 	books := document.Find("[data-asin]")
 	if books.Length() == 0 {
-		return nil, utils.Report("Can't find books...")
+		return nil, utils.Report("Can't find books! <br><br>" + content)
 	}
 
 	for i := range books.Length() {
