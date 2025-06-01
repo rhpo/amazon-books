@@ -14,7 +14,7 @@ func RegisterBookRoutes(router fiber.Router) {
 
 		page, error := strconv.Atoi(c.Query("page"))
 		if error != nil {
-			return c.Status(fiber.StatusBadRequest).JSON(map[string]interface{}{
+			return c.Status(fiber.StatusBadRequest).JSON(map[string]any{
 				"error": "Missing 'page' query parameter",
 			})
 		}

@@ -23,17 +23,24 @@ func FetchBook(id string) (*Book, error) {
 		return nil, error
 	}
 
-	file, err := os.Create("book.html")
-	if err != nil {
-		return nil, utils.Report("Failed to create file: book.html")
-	}
-	defer file.Close()
-	_, err = file.WriteString(content)
-	if err != nil {
-		return nil, utils.Report("Failed to write content to file: book.html")
-	}
-	if err := file.Close(); err != nil {
-		return nil, utils.Report("Failed to close file: book.html")
+	{ // Create File book.html containing content
+		file, err := os.Create("book.html")
+
+		if err != nil {
+			return nil, utils.Report("Failed to create file: book.html")
+		}
+
+		defer file.Close()
+
+		_, err = file.WriteString(content)
+
+		if err != nil {
+			return nil, utils.Report("Failed to write content to file: book.html")
+		}
+
+		if err := file.Close(); err != nil {
+			return nil, utils.Report("Failed to close file: book.html")
+		}
 	}
 
 	contentReader := strings.NewReader(content)
