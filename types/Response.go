@@ -1,5 +1,7 @@
 package types
 
 type Response struct {
-	error string
+	Error string "json:\"error\""
+	Code  string "json:\"code\""
+	Data  any    "json:\"data\""
 }

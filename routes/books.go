@@ -4,6 +4,8 @@ import (
 	"amazon/scrapers"
 	"strconv"
 
+	"amazon/types"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -14,18 +16,29 @@ func RegisterBookRoutes(router fiber.Router) {
 
 		page, error := strconv.Atoi(c.Query("page"))
 		if error != nil {
-			return c.Status(fiber.StatusBadRequest).JSON(map[string]any{
-				"error": "Missing 'page' query parameter",
+			return c.Status(fiber.StatusBadRequest).JSON(types.Response{
+				Error: "Missing 'page' query parameter",
+				Code:  "invalid_params",
+				Data:  nil,
 			})
 		}
 
 		books, error := scrapers.FetchBooks(page)
 
 		if error != nil {
-			return error
+			return c.Status(fiber.StatusNotFound).JSON(types.Response{
+				Error: "Can't find any book.",
+				Code:  "empty_page",
+				Data:  nil,
+			})
 		}
 
-		return c.Status(fiber.StatusOK).JSON(books)
+		return c.Status(fiber.StatusOK).JSON(types.Response{
+			Error: "",
+			Code:  "success",
+			Data:  books,
+		})
+
 	})
 
 	// domain.com/books/book
@@ -34,12 +47,17 @@ func RegisterBookRoutes(router fiber.Router) {
 		book, error := scrapers.FetchBook(id)
 
 		if error != nil {
-			return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-				"error": "Book not found",
-				"err":   error.Error(),
+			return c.Status(fiber.StatusNotFound).JSON(types.Response{
+				Error: "Book not found: " + error.Error(),
+				Code:  "book_not_found",
+				Data:  nil,
 			})
 		}
 
-		return c.Status(fiber.StatusOK).JSON(book)
+		return c.Status(fiber.StatusOK).JSON(types.Response{
+			Error: "",
+			Code:  "success",
+			Data:  book,
+		})
 	})
 }

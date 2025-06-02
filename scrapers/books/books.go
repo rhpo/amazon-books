@@ -1,4 +1,4 @@
-package scrapers
+package books
 
 import (
 	. "amazon/types"
@@ -29,12 +29,11 @@ func FetchBooks(page int) (*[]BookThumbnail, error) {
 
 	books := document.Find("[data-asin]")
 	if books.Length() == 0 {
-		return nil, utils.Report("Can't find books! <br><br>" + content)
+		return nil, utils.Report("Can't find books!")
 	}
 
 	for i := range books.Length() {
 		bookThumbnail := BookThumbnail{}
-
 		book := books.Eq(i)
 
 		{ // ID
@@ -77,20 +76,27 @@ func FetchBooks(page int) (*[]BookThumbnail, error) {
 		{ // Author
 			authorEl := book.Find(".a-size-small.a-link-child")
 			if authorEl.Length() == 0 {
-				return nil, utils.Report("Can't find book author...")
-			}
+				bookThumbnail.Authors = []AuthorType{}
+			} else {
+				authorNameEl := authorEl.Find("div")
+				if authorNameEl.Length() == 0 {
+					return nil, utils.Report("Can't find book author name...")
+				}
 
-			authorNameEl := authorEl.Find("div")
-			if authorNameEl.Length() == 0 {
-				return nil, utils.Report("Can't find book author name...")
-			}
+				var link string = authorEl.AttrOr("href", "")
+				var name string = strings.TrimSpace(authorNameEl.Text())
+				id, _ := utils.ExtractID(link)
 
-			bookThumbnail.Authors = []AuthorType{
-				{
-					Name:  strings.TrimSpace(authorNameEl.Text()),
-					Link:  authorEl.AttrOr("href", ""),
-					Image: "", // From main page, there is no image available
-				},
+				println("Link: " + link + " / id: " + id)
+
+				bookThumbnail.Authors = []AuthorType{
+					{
+						ID:    id,
+						Name:  name,
+						Link:  link,
+						Image: "", // From main page, there is no image available
+					},
+				}
 			}
 		}
 

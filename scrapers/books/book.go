@@ -1,4 +1,4 @@
-package scrapers
+package books
 
 import (
 	"os"
@@ -200,8 +200,10 @@ func FetchBook(id string) (*Book, error) {
 			name := strings.TrimSpace(el.Find(".a-truncate").Text())
 			link, _ := el.Find(".a-column.a-span4 > a").Attr("href")
 			image, _ := el.Find(".a-column.a-span3").Find("img").Attr("src")
+			id, _ := utils.ExtractID(link)
 
 			authors = append(authors, AuthorType{
+				ID:    id,
 				Name:  name,
 				Link:  link,
 				Image: image,

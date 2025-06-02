@@ -23,8 +23,11 @@ func main() {
 	app := fiber.New()
 	PORT := os.Getenv("PORT")
 
-	// use the registerBookRoutes function to register the routes
+	// ROUTE: Books
 	routes.RegisterBookRoutes(app.Group("/books"))
+
+	// ROUTE: Authors
+	routes.RegisterAuthorRoutes(app.Group("/authors"))
 
 	app.Get("/", func(client *fiber.Ctx) error {
 		return client.SendFile("./index.html")

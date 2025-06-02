@@ -1,13 +1,17 @@
 package types
 
 type Author struct {
-	Name  string
-	About string
-	Image string
+	ID    string `json:"id"`
+	Name  string `json:"name"`
+	About string `json:"about"`
+	Image string `json:"image"`
 }
 
 type AuthorThumbnail struct {
-	Name, Link, Image string
+	ID    string `json:"id"`
+	Name  string `json:"name"`
+	Link  string `json:"link"`
+	Image string `json:"image"`
 }
 
 // type AuthorType string

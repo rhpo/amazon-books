@@ -5,22 +5,29 @@ import (
 )
 
 type Book struct {
-	ID    string // because it may start with "0"
-	Pages int
+	ID    string `json:"id"`
+	Pages int    `json:"pages"`
 
-	Title, Cover, Description,
-	Language, Publisher string
+	Title       string `json:"title"`
+	Cover       string `json:"cover"`
+	Description string `json:"description"`
+	Language    string `json:"language"`
+	Publisher   string `json:"publisher"`
 
-	Rating, Price float32
+	Rating float32 `json:"rating"`
+	Price  float32 `json:"price"`
 
-	Authors   []AuthorType
-	PubDate   goment.DateTime
-	Dimension Dimention
+	Authors   []AuthorType    `json:"author"`
+	PubDate   goment.DateTime `json:"publication_date"`
+	Dimension Dimention       `json:"dimetions"`
 }
 
 type BookThumbnail struct {
-	ID, Link, Title, Cover string
+	ID    string `json:"id"`
+	Link  string `json:"link"`
+	Title string `json:"title"`
+	Cover string `json:"cover"`
 
-	Authors []AuthorType
-	Rating  float32
+	Authors []AuthorType `json:"authors"`
+	Rating  float32      `json:"rating"`
 }
