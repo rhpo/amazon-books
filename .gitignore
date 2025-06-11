@@ -1,3 +1,7 @@
 .env
 tmp
 app
+book.html
+author.html
+books_cache
+database.db
