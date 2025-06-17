@@ -27,6 +27,7 @@ func main() {
 	PORT := os.Getenv("PORT")
 
 	routes.RegisterBookRoutes(app.Group("/books"))
+	routes.RegisterAdminRoutes(app.Group("/admin"))
 	routes.RegisterAuthorRoutes(app.Group("/authors"))
 	routes.RegisterOrderRoutes(app.Group("/orders"))
 

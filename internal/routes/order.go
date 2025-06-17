@@ -11,6 +11,6 @@ func RegisterOrderRoutes(router fiber.Router) {
 	var orderHandler controllers.OrderHandler = controllers.NewOrderHandler()
 
 	router.Post("/", orderHandler.PostOrder)
-	router.Get("/:id", orderHandler.GetOrderByID)
-	router.Get("/", orderHandler.GetAllOrders)
+	router.Get("/:id", RequireAdminLogin, orderHandler.GetOrderByID)
+	router.Get("/", RequireAdminLogin, orderHandler.GetAllOrders)
 }
