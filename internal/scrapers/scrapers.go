@@ -9,5 +9,7 @@ import (
 var FetchBook = books.FetchBook
 var FetchBooks = books.FetchBooks
 
+var SearchBooks = books.SearchBooks
+
 // authors
 var FetchAuthor = authors.FetchAuthor

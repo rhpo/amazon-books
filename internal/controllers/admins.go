@@ -95,7 +95,7 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 		Name:     "token",
 		Value:    token,
 		HTTPOnly: true,
-		Secure:   false, // Set to true if using HTTPS
+		Secure:   true, // Set to true if using HTTPS
 	})
 
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{

@@ -9,5 +9,5 @@ const (
 
 	CACHE_DIRECTORY = "books_cache"
 	CACHE_DURATION  = 5 * time.Minute
-	TOKEN_EXPIRY    = 5 * time.Minute // Duration for which the token is valid
+	TOKEN_EXPIRY    = 72 * time.Hour // Duration for which the token is valid
 )

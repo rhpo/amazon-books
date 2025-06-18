@@ -3,35 +3,47 @@ package utils
 import (
 	"encoding/json"
 	"os"
+	"path/filepath"
 	"time"
 )
 
 func CacheValid(path string, maxAge time.Duration) bool {
-
 	// make the parent directories recursively if they do not exist
 	if err := os.MkdirAll(CACHE_DIRECTORY, 0755); err != nil {
 		Report("Failed to create cache directory: " + err.Error())
-
 		return false
 	}
 
-	// get file info
-	info, err := os.Stat(path)
-
-	if err != nil {
+	// handle wildcard in path, e.g., books-cache/2-*.json
+	matches, err := filepath.Glob(path)
+	if err != nil || len(matches) == 0 {
 		return false
 	}
 
-	age := time.Since(info.ModTime())
-	return age < maxAge
+	for _, match := range matches {
+		info, err := os.Stat(match)
+		if err != nil {
+			continue
+		}
+		age := time.Since(info.ModTime())
+		if age < maxAge {
+			return true
+		}
+	}
+	return false
 }
 
-func ReadFile(path string) (string, error) {
-	content, err := os.ReadFile(path)
-	if err != nil {
-		return "", err
+func ReadFile(path string) (string, string, error) {
+	matches, err := filepath.Glob(path)
+	if err != nil || len(matches) == 0 {
+		return "", "", err
 	}
-	return string(content), nil
+	// Read the first matching file
+	content, err := os.ReadFile(matches[0])
+	if err != nil {
+		return "", "", err
+	}
+	return string(content), matches[0], nil
 }
 
 func WriteFile(path string, content string) error {

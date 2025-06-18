@@ -11,12 +11,13 @@ func RegisterBookRoutes(router fiber.Router) {
 
 	var bookHandler controllers.BookHandler = *controllers.NewBookHandler()
 
-	router.Get("/", func(c *fiber.Ctx) error {
-		return bookHandler.GetBooks(c)
-	})
+	// domain.com/books
+	router.Get("/", bookHandler.GetBooks)
+
+	// domain.com/books/search
+	router.Get("/search", bookHandler.SearchBooks)
 
 	// domain.com/books/book
-	router.Get("/:id", func(c *fiber.Ctx) error {
-		return bookHandler.GetBookByID(c)
-	})
+	router.Get("/:id", bookHandler.GetBookByID)
+
 }
