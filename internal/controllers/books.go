@@ -26,6 +26,7 @@ func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 	}
 
 	books, pageCount, err := scrapers.FetchBooks(page)
+
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(models.Response{
 			Error: "Can't find any book.",
@@ -33,6 +34,9 @@ func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 			Data:  nil,
 		})
 	}
+
+	shuffled := utils.Shuffle(*books)
+	books = &shuffled
 
 	return c.Status(fiber.StatusOK).JSON(models.Response{
 		Error: "",
@@ -46,15 +50,27 @@ func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 
 func (h *BookHandler) GetBookByID(c *fiber.Ctx) error {
 	id := c.Params("id")
-	book, err := scrapers.FetchBook(id)
+	book, errCode, err := scrapers.FetchBook(id)
+
+	status := fiber.StatusInternalServerError
+	if errCode == "not_found" {
+		status = fiber.StatusNotFound
+	}
 
 	if err != nil {
-		return c.Status(fiber.StatusNotFound).JSON(models.Response{
-			Error: "Book not found: " + err.Error(),
-			Code:  "book_not_found",
+		return c.Status(status).JSON(models.Response{
+			Error: err.Error(),
+			Code:  errCode,
 			Data:  nil,
 		})
 	}
+
+	// UPDATE: CLIENT ASKED TO NOT DISPLAY THE PRICE AND SEND IT AS AN EMAIL WITH HIS OWN FORMULA.
+	// apply new formatted price
+	// book.Price = utils.FormatPrice(book.Price)
+
+	// upscale image for better quality
+	book.Cover = utils.ResizeBookImage(book.Cover, 1000)
 
 	return c.Status(fiber.StatusOK).JSON(models.Response{
 		Error: "",
@@ -64,8 +80,10 @@ func (h *BookHandler) GetBookByID(c *fiber.Ctx) error {
 }
 
 func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
+
 	query := c.Query("query")
 	page, err := strconv.Atoi(c.Query("page"))
+
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(models.Response{
 			Error: "Missing or invalid 'page' query parameter",
@@ -76,7 +94,6 @@ func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 
 	books, pageCount, err := scrapers.SearchBooks(query, page)
 	if err != nil {
-
 		utils.Report("Failed to search books: " + err.Error())
 
 		return c.Status(fiber.StatusNotFound).JSON(models.Response{

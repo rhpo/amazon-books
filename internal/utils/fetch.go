@@ -12,18 +12,18 @@ import (
 const maxTry = 5
 const failedMsg = "Request was throttled. Please wait a moment and refresh the page"
 
-func Fetch(url string) (string, error) {
+func Fetch(url string) (string, int, error) {
 	return fetchWithRetries(url, 0)
 }
 
-func fetchWithRetries(url string, attempt int) (string, error) {
+func fetchWithRetries(url string, attempt int) (string, int, error) {
 	if attempt > maxTry {
-		return "", Report("Max retries exceeded while fetching: " + url)
+		return "", 504, Report("Max retries exceeded while fetching: " + url)
 	}
 
 	client, err := cloudscraper.Init(false, false)
 	if err != nil {
-		return "", Report("failed to create CloudScraper client: " + err.Error())
+		return "", 500, Report("failed to create CloudScraper client: " + err.Error())
 	}
 
 	headers := map[string]string{
@@ -34,7 +34,7 @@ func fetchWithRetries(url string, attempt int) (string, error) {
 
 	res, err := client.Get(url, headers, "")
 	if err != nil {
-		return "", fmt.Errorf("failed to fetch URL: %w", err)
+		return "", 500, fmt.Errorf("failed to fetch URL: %w", err)
 	}
 
 	if len(res.Body) < 70 && strings.Contains(res.Body, "wait a moment and refresh the page") {
@@ -47,5 +47,5 @@ func fetchWithRetries(url string, attempt int) (string, error) {
 		return fetchWithRetries(url, attempt+1)
 	}
 
-	return res.Body, nil
+	return res.Body, res.Status, nil
 }

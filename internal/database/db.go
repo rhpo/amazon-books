@@ -30,7 +30,9 @@ func ConnectDB() *gorm.DB {
 
 func Migrate() {
 	DB.AutoMigrate(&models.Order{})
+	DB.AutoMigrate(&models.OrderItem{}) // Add OrderItem migration
 	DB.AutoMigrate(&models.Admin{})
+	DB.AutoMigrate(&models.Email{})
 
 	// add the default admin if it doesn't exist, checking by username
 	username := os.Getenv("ADMIN_USERNAME")

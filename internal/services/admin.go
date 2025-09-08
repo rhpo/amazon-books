@@ -5,14 +5,15 @@ import (
 	"amazon/internal/utils"
 	"amazon/models"
 	"errors"
+	"fmt"
 	"log"
 	"os"
+	"strconv"
 
 	"gorm.io/gorm"
 )
 
-type AdminService struct {
-}
+type AdminService struct{}
 
 func NewAdminService() *AdminService {
 	return &AdminService{}
@@ -41,6 +42,31 @@ func (s *AdminService) GetAdminByID(id string) (*models.Admin, error) {
 	return &admin, nil
 }
 
+func (s *AdminService) IsValidAdmin(token string) (bool, string, error) {
+	var admin models.Admin
+
+	// Example: verify token (replace with your actual verification logic)
+	adminID, err := utils.ValidateJWT(token)
+	if err != nil {
+		return false, "invalid_token", nil
+	}
+
+	// Example: check if admin still exists in DB (replace with your actual DB check)
+	exists, err := s.AdminExists(adminID)
+	if err != nil || !exists {
+		return false, "admin_not_found", nil
+	}
+
+	// convert adminID to uint to give it to admin.ID
+	adminUINT64, err := strconv.ParseUint(adminID, 10, 64)
+	if err != nil {
+		return false, "invalid_token", nil
+	}
+	admin.ID = uint(adminUINT64)
+
+	return true, fmt.Sprint(admin.ID), nil
+}
+
 func (s *AdminService) GetAllAdmins() ([]models.Admin, error) {
 	var admins []models.Admin
 	if err := database.DB.Find(&admins).Error; err != nil {
@@ -60,13 +86,13 @@ func (s *AdminService) Login(username, password string) (*models.Admin, error) {
 
 	log.Printf("Admin found: %s", admin.Username)
 	// print given password and admin password
-	log.Printf("Given password: %s, Admin password: %s", password, admin.Password)
+	// log.Printf("Given password: %s, Admin password: %s", password, admin.Password)
 
 	// !utils.CheckPasswordHash's parameters are:
-	log.Printf("%s, %s, %s", password, admin.Password, os.Getenv("APP_SECRET"))
+	// log.Printf("%s, %s, %s", password, admin.Password, os.Getenv("APP_SECRET"))
 
 	if !utils.CheckPasswordHash(password, admin.Password, os.Getenv("APP_SECRET")) {
-		return nil, errors.New("invalid password")
+		return nil, utils.Report("invalid password")
 	}
 
 	return &admin, nil

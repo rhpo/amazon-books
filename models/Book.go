@@ -14,8 +14,8 @@ type Book struct {
 	Price  float32 `json:"price"`
 	Rating float32 `json:"rating"`
 
-	Authors   []AuthorType `json:"author"`
-	Dimension Dimention    `json:"dimetions"`
+	Authors   []AuthorType `json:"authors"`
+	Dimension Dimension    `json:"dimensions"`
 }
 
 type BookThumbnail struct {

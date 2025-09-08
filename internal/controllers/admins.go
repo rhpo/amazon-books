@@ -5,6 +5,7 @@ import (
 	"amazon/internal/utils"
 	"amazon/models"
 	"fmt"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -73,6 +74,7 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 	if err := c.BodyParser(&loginData); err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(models.Response{
 			Error: "Invalid request body: " + err.Error(),
+			Code:  "invalid_request",
 		})
 	}
 
@@ -80,6 +82,7 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(models.Response{
 			Error: "Login failed: " + err.Error(),
+			Code:  "login_failed",
 		})
 	}
 
@@ -87,6 +90,7 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).JSON(models.Response{
 			Error: "Failed to generate token: " + err.Error(),
+			Code:  "login_failed",
 		})
 	}
 
@@ -95,12 +99,63 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 		Name:     "token",
 		Value:    token,
 		HTTPOnly: true,
-		Secure:   true, // Set to true if using HTTPS
+		Expires:  time.Now().Add(utils.TOKEN_EXPIRY), // Set expiration time
+		Secure:   true,                               // Set to true if using HTTPS
 	})
 
-	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"token": token,
-		"admin": admin,
+	admin.Password = ""
+
+	return c.Status(fiber.StatusOK).JSON(models.Response{
+		Code: "success",
+		Data: fiber.Map{
+			"token": token,
+			"admin": admin,
+		},
+	})
+}
+
+func (h AdminHandler) VerifyToken(c *fiber.Ctx) error {
+	token := c.Cookies("token")
+
+	if token == "" {
+		fmt.Printf("Token not found!")
+
+		return c.Status(fiber.StatusUnauthorized).JSON(models.Response{
+			Error: "Unauthorized: token missing",
+			Code:  "token_missing",
+		})
+	}
+
+	var valid bool
+	var adminID string
+	var err error
+
+	if valid, adminID, err = h.Service.IsValidAdmin(token); !valid || err != nil {
+
+		fmt.Printf("Unauthorized: %s because %s", adminID, err)
+
+		return c.Status(fiber.StatusUnauthorized).JSON(models.Response{
+			Error: fmt.Sprintf("Unauthorized: %s", adminID),
+			Code:  "token_invalid",
+		})
+	}
+
+	admin, err := h.Service.GetAdminByID(adminID)
+
+	if err != nil {
+		fmt.Printf("Failed to retrieve admin: %s", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(models.Response{
+			Error: fmt.Sprintf("Failed to retrieve admin (not found with token: %s and id: %s)", token, adminID),
+			Code:  "token_invalid",
+		})
+	}
+
+	return c.Status(200).JSON(models.Response{
+		Error: "",
+		Code:  "success",
+		Data: fiber.Map{
+			"admin": admin,
+		},
 	})
 }
 
@@ -115,4 +170,22 @@ func (h AdminHandler) DeleteAdmin(c *fiber.Ctx) error {
 	}
 
 	return c.Status(fiber.StatusNoContent).SendString("Admin deleted successfully")
+}
+
+func (h AdminHandler) GetAllEmails(c *fiber.Ctx) error {
+	var emailService services.EmailService = *services.NewEmailService()
+	var emailArray []string // flattened array of emails
+
+	emails, err := emailService.GetEmails()
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(models.Response{
+			Error: "Failed to retrieve emails: " + err.Error(),
+		})
+	}
+
+	for _, email := range emails {
+		emailArray = append(emailArray, email.Email)
+	}
+
+	return c.Status(fiber.StatusOK).JSON(emailArray)
 }
