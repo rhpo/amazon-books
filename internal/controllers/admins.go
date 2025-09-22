@@ -65,6 +65,7 @@ func (h AdminHandler) GetAllAdmins(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(admins)
 }
 
+// LoginAdmin handles the admin login process and returns a JWT token.
 func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 	var loginData struct {
 		Username string `json:"username"`
