@@ -319,6 +319,7 @@ func FetchBook(id string) (*models.Book, string, error) {
 				if len(dims) != 3 {
 
 					utils.Report("Dimentions text is not in expected format")
+					dims = []string{"0", "0", "0"}
 
 					// return nil, "server_error", utils.Report("Dimentions text is not in expected format")
 				}
