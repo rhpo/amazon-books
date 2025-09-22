@@ -331,10 +331,14 @@ func FetchBook(id string) (*models.Book, string, error) {
 		result.Dimension = d
 	}
 
-	{ // Price
+	{ // Price (NOW OPTIONAL)
 		priceWrapper := bookPriceFrame.Find(".aok-offscreen")
 		if priceWrapper.Length() == 0 {
-			return nil, "server_error", utils.Report("Cannot find the price wrapper (#tmm-grid-swatch-HARDCOVER .slot-price span)")
+
+			result.Price = 0
+
+			// return nil, "server_error", utils.Report("Cannot find the price wrapper (#tmm-grid-swatch-HARDCOVER .slot-price span)")
+			utils.Report("Cannot find the price wrapper (#tmm-grid-swatch-HARDCOVER .slot-price span)")
 		}
 
 		priceText := priceWrapper.Text()
@@ -344,7 +348,10 @@ func FetchBook(id string) (*models.Book, string, error) {
 		priceText = strings.Split(priceText, "     ")[0]
 		priceText = strings.TrimSpace(priceText)
 		if priceText == "" {
-			return nil, "server_error", utils.Report("Price text is empty")
+			// return nil, "server_error", utils.Report("Price text is empty")
+			utils.Report("Price text is empty")
+
+			result.Price = 0
 		}
 
 		priceText = strings.Split(priceText, " ")[0]
