@@ -150,18 +150,21 @@ func FetchBook(id string) (*models.Book, string, error) {
 
 			pagesText := pagesWrapper.Text()
 			if pagesText == "" {
-				return nil, "server_error", utils.Report("Pages count text is empty")
+				utils.Report("Pages count text is empty")
+				// return nil, "server_error", utils.Report("Pages count text is empty")
 			}
 
 			parts := strings.Fields(pagesText)
 			if len(parts) == 0 {
-				return nil, "server_error", utils.Report("Pages count text is not in expected format")
+				utils.Report("Pages count text is not in expected format")
+				// return nil, "server_error", utils.Report("Pages count text is not in expected format")
 			}
 
 			pageCount, err := strconv.Atoi(parts[0])
 			pagesCount = pageCount
 			if err != nil {
-				return nil, "server_error", utils.Report("Pages count is not a valid integer")
+				utils.Report("Pages count is not a valid integer")
+				// return nil, "server_error", utils.Report("Pages count is not a valid integer")
 			}
 		}
 
@@ -172,12 +175,14 @@ func FetchBook(id string) (*models.Book, string, error) {
 	{ // Language
 		languageWrapper := bookFrame.Find("#rpi-attribute-language .rpi-attribute-value span")
 		if languageWrapper.Length() == 0 {
-			return nil, "server_error", utils.Report("Cannot find the language wrapper (#rpi-attribute-language)")
+			utils.Report("Cannot find the language wrapper (#rpi-attribute-language)")
+			// return nil, "server_error", utils.Report("Cannot find the language wrapper (#rpi-attribute-language)")
 		}
 
 		languageText := languageWrapper.Text()
 		if languageText == "" {
-			return nil, "server_error", utils.Report("Language text is empty")
+			utils.Report("Language text is empty")
+			// return nil, "server_error", utils.Report("Language text is empty")
 		}
 
 		result.Language = languageText
@@ -191,11 +196,10 @@ func FetchBook(id string) (*models.Book, string, error) {
 			publisher = strings.TrimSpace(publisherWrapper.Text())
 
 			if publisher == "" {
-				return nil, "server_error", utils.Report("Publisher text is empty")
+				utils.Report("Publisher text is empty")
+				// return nil, "server_error", utils.Report("Publisher text is empty")
 			}
 
-		} else {
-			publisher = ""
 		}
 
 		result.Publisher = publisher
@@ -204,20 +208,26 @@ func FetchBook(id string) (*models.Book, string, error) {
 	{ // Publication-Date
 		pubdateWrapper := bookFrame.Find("#rpi-attribute-book_details-publication_date .rpi-attribute-value span")
 		if pubdateWrapper.Length() == 0 {
-			return nil, "server_error", utils.Report("Cannot find the pubdate wrapper (#rpi-attribute-book_details-publication_date)")
+			utils.Report("Cannot find the pubdate wrapper (#rpi-attribute-book_details-publication_date)")
+			// return nil, "server_error", utils.Report("Cannot find the pubdate wrapper (#rpi-attribute-book_details-publication_date)")
 		}
 
 		pubdateText := pubdateWrapper.Text()
 		if pubdateText == "" {
-			return nil, "server_error", utils.Report("Pubdate text is empty")
+			utils.Report("Pubdate text is empty")
+			// return nil, "server_error", utils.Report("Pubdate text is empty")
 		}
 
 		m, err := goment.New(pubdateText, "MMMM D, YYYY")
 		if err != nil {
-			return nil, "server_error", utils.Report("Pubdate cannot be parsed.")
+			// return nil, "server_error", utils.Report("Pubdate cannot be parsed.")
+
+			utils.Report("Pubdate cannot be parsed.")
+			result.PubDate = ""
+		} else {
+			result.PubDate = m.ToTime().Format(time.RFC3339)
 		}
 
-		result.PubDate = m.ToTime().Format(time.RFC3339)
 	}
 
 	{ // Rating
@@ -227,7 +237,9 @@ func FetchBook(id string) (*models.Book, string, error) {
 			ratingText := strings.TrimSpace(ratingWrapper.Text())
 
 			if ratingText == "" {
-				return nil, "server_error", utils.Report("Rating text is empty")
+				utils.Report("Rating text is empty")
+				result.Rating = -1.0
+				// return nil, "server_error", utils.Report("Rating text is empty")
 			}
 
 			ratingText = strings.ReplaceAll(ratingText, ",", ".")
@@ -273,7 +285,8 @@ func FetchBook(id string) (*models.Book, string, error) {
 		authorElements := bookFrame.Find(".author a")
 
 		if authorElements.Length() == 0 {
-			return nil, "server_error", utils.Report("Cannot find authors from (.a-row.a-spacing-small.a-spacing-top-medium)")
+			utils.Report("Cannot find authors from (.a-row.a-spacing-small.a-spacing-top-medium)")
+			// return nil, "server_error", utils.Report("Cannot find authors from (.a-row.a-spacing-small.a-spacing-top-medium)")
 		}
 
 		authorElements.Each(func(i int, el *goquery.Selection) {
@@ -304,7 +317,10 @@ func FetchBook(id string) (*models.Book, string, error) {
 				dims := strings.Split(dimentionsText, " x ")
 
 				if len(dims) != 3 {
-					return nil, "server_error", utils.Report("Dimentions text is not in expected format")
+
+					utils.Report("Dimentions text is not in expected format")
+
+					// return nil, "server_error", utils.Report("Dimentions text is not in expected format")
 				}
 
 				width, err1 := strconv.ParseFloat(strings.TrimSpace(dims[0]), 64)
@@ -312,7 +328,8 @@ func FetchBook(id string) (*models.Book, string, error) {
 				height, err3 := strconv.ParseFloat(strings.TrimSpace(dims[2]), 64)
 
 				if err1 != nil || err2 != nil || err3 != nil {
-					return nil, "server_error", utils.Report("Failed to parse dimention values")
+					// return nil, "server_error", utils.Report("Failed to parse dimention values")
+					utils.Report("Failed to parse dimention values")
 				}
 
 				d.Width = width
