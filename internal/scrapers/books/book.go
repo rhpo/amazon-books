@@ -347,12 +347,18 @@ func FetchBook(id string) (*models.Book, string, error) {
 			return nil, "server_error", utils.Report("Price text is empty")
 		}
 
+		priceText = strings.Split(priceText, " ")[0]
+
 		priceText = strings.TrimSpace(
 			strings.ReplaceAll(strings.ReplaceAll(priceText, "from", ""), "€", ""))
 
 		price, err := strconv.ParseFloat(priceText, 32)
 		if err != nil {
-			return nil, "server_error", utils.Report("Failed to parse price value, " + err.Error())
+
+			// AS PRICE BECAME NOW OPTIONAL, WE JUST SET IT TO -1 IF IT CANNOT BE PARSED
+			// return nil, "server_error", utils.Report("Failed to parse price value, " + err.Error())
+
+			price = 0
 		}
 
 		result.Price = float32(price)
