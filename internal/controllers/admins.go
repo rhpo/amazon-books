@@ -100,7 +100,8 @@ func (h AdminHandler) LoginAdmin(c *fiber.Ctx) error {
 		Value:    token,
 		HTTPOnly: true,
 		Expires:  time.Now().Add(utils.TOKEN_EXPIRY), // Set expiration time
-		Secure:   true,                               // Set to true if using HTTPS
+		Secure:   true,
+		SameSite: "None",
 	})
 
 	admin.Password = ""
