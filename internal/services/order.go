@@ -44,10 +44,6 @@ func (s *OrderService) GetAllOrders() ([]models.Order, error) {
 		return nil, err
 	}
 
-	for _, order := range orders {
-		s.SetOrderStatus(fmt.Sprint(order.ID), "pending")
-	}
-
 	return orders, nil
 }
 
