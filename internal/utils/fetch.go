@@ -1,16 +1,15 @@
 package utils
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
+	"os/exec"
 	"strings"
 	"time"
-
-	"github.com/RomainMichau/cloudscraper_go/cloudscraper"
 )
 
 const maxTry = 5
-const failedMsg = "Request was throttled. Please wait a moment and refresh the page"
 
 func Fetch(url string) (string, int, error) {
 	return fetchWithRetries(url, 0)
@@ -18,34 +17,55 @@ func Fetch(url string) (string, int, error) {
 
 func fetchWithRetries(url string, attempt int) (string, int, error) {
 	if attempt > maxTry {
-		return "", 504, Report("Max retries exceeded while fetching: " + url)
+		return "", 504, fmt.Errorf("max retries exceeded while fetching: %s", url)
 	}
 
-	client, err := cloudscraper.Init(false, false)
-	if err != nil {
-		return "", 500, Report("failed to create CloudScraper client: " + err.Error())
+	curlArgs := []string{
+		url,
+		"--compressed",
+		"-H", "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0",
+		"-H", "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+		"-H", "Accept-Language: en-US,en;q=0.5",
+		"-H", "Accept-Encoding: gzip, deflate, br, zstd",
+		"-H", "Connection: keep-alive",
+		"-H", "Cookie: session-id=258-2014747-6687326; session-id-time=2082787201l; i18n-prefs=EUR; lc-acbfr=fr_FR; csm-hit=tb:08C9C3R57575E60P3TRC+s-N2JDN7ZM15RZ6E8MTV99|1759693231248&t:1759693231248&adb:adblk_no; ubid-acbfr=261-9368196-8565703; session-token=8uzMUfASOHtDkf5a/SKkR3h0djQq2fcXYGsDcO21v7YXP8qqTqRRsQQbmOKfYUrL28Xxr8TwKPNtpUp05jYqC3ucgracn2vu1R8VCoZ0/THyiSIbBn9NuhbFR6NJJoA0aQ6aw6V/NIVqBewPY7JFkvBmpUIAc4d5F+V14uYHTrCdPpgcPrpnBv95pxhTtbfkQ+R8I5Ss+3PNRY+Vq3qwfV/iSVl0IVYUxZwe7wqQsgGwsVkLBE6+fIPHkX1m++NGL29tYSeN/GhANEPKjciwYYO6gBmeXpu1T8cdB3GIPykBT2Gb3iYCBCvBz1JPl8390zxpATm6w8Qt4nC9n7+OgA4+JUasWETN; s_nr=1758565313563-New; s_vnum=2190565313564%26vn%3D1; s_dslv=1758565313564; rxc=AAaOgDXKbjgoGVtO3AQ",
+		"-H", "Upgrade-Insecure-Requests: 1",
+		"-H", "Sec-Fetch-Dest: document",
+		"-H", "Sec-Fetch-Mode: navigate",
+		"-H", "Sec-Fetch-Site: cross-site",
+		"-H", "Priority: u=0, i",
+		"-H", "Pragma: no-cache",
+		"-H", "Cache-Control: no-cache",
+		"-s",                 // silent mode
+		"-w", "%{http_code}", // append HTTP code
 	}
 
-	headers := map[string]string{
-		"User-Agent":      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-		"Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-		"Accept-Language": "en-US,en;q=0.5",
+	cmd := exec.Command("curl", curlArgs...)
+
+	var out bytes.Buffer
+	cmd.Stdout = &out
+	if err := cmd.Run(); err != nil {
+		return "", 500, fmt.Errorf("failed to execute curl: %w", err)
 	}
 
-	res, err := client.Get(url, headers, "")
-	if err != nil {
-		return "", 500, fmt.Errorf("failed to fetch URL: %w", err)
+	output := out.String()
+	if len(output) < 3 {
+		return "", 500, fmt.Errorf("invalid curl output")
 	}
 
-	if len(res.Body) < 70 && strings.Contains(res.Body, "wait a moment and refresh the page") {
-		// wait 2 to 3 seconds
-		rand.Seed(time.Now().UnixNano())
+	// Extract HTTP status code
+	statusStr := output[len(output)-3:]
+	body := strings.TrimSpace(output[:len(output)-3])
+
+	status := 0
+	fmt.Sscanf(statusStr, "%d", &status)
+
+	if strings.Contains(body, "wait a moment and refresh the page") {
 		delay := time.Duration(1+rand.Intn(2)) * time.Second
 		fmt.Printf("Request throttled. Waiting %v before retrying...\n", delay)
 		time.Sleep(delay)
-
 		return fetchWithRetries(url, attempt+1)
 	}
 
-	return res.Body, res.Status, nil
+	return body, status, nil
 }
