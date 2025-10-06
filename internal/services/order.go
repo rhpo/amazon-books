@@ -4,7 +4,6 @@ import (
 	"amazon/internal/database"
 	"amazon/models"
 	"errors"
-	"fmt"
 
 	"gorm.io/gorm"
 )
@@ -42,10 +41,6 @@ func (s *OrderService) GetAllOrders() ([]models.Order, error) {
 	var orders []models.Order
 	if err := database.DB.Preload("OrderItems").Find(&orders).Error; err != nil {
 		return nil, err
-	}
-
-	for _, order := range orders {
-		s.SetOrderStatus(fmt.Sprint(order.ID), "pending")
 	}
 
 	return orders, nil
