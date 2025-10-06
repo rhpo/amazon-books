@@ -37,6 +37,8 @@ func (s *OrderService) GetOrderByID(id string) (*models.Order, error) {
 	return &order, nil
 }
 
+// GetAllOrders retrieves all orders from the database, including their order items.
+// It returns a slice of orders and an error if any occurs during the operation.
 func (s *OrderService) GetAllOrders() ([]models.Order, error) {
 	var orders []models.Order
 	if err := database.DB.Preload("OrderItems").Find(&orders).Error; err != nil {
