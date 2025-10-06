@@ -295,13 +295,34 @@ func extractPageCount(document *goquery.Document, isSearch bool) int {
 	return pageCount
 }
 
-func fetchAndParseBooks(url string, isSearch bool) (*[]models.BookThumbnail, int, error) {
-	content, status, err := utils.Fetch(url)
-	if status == 404 {
-		return nil, 0, utils.Report("Page not found")
+func castBooksData(json string) (*[]models.BookThumbnail, int, error) {
+	response := &models.APIResponse{}
+
+	err := response.GetFrom(json)
+	if err != nil {
+		return nil, 0, utils.Report("Can't convert api response to struct APIRepsonse.")
 	}
+
+	// book := response.Migrate()
+
+	books := make([]models.BookThumbnail, 0)
+	return &books, 0, nil
+
+}
+
+func fetchAndParseBooks(url string, isSearch bool) (*[]models.BookThumbnail, int, error) {
+	content, status, err, isDirect := utils.Fetch(url)
+
 	if err != nil {
 		return nil, 0, err
+	}
+
+	if isDirect {
+		return castBooksData(content)
+	}
+
+	if status == 404 {
+		return nil, 0, utils.Report("Page not found")
 	}
 
 	document, err := parseDocument(content)

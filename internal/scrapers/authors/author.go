@@ -13,7 +13,7 @@ func FetchAuthor(authorID string) (*models.Author, error) {
 	var result models.Author = models.Author{}
 
 	var url string = utils.AMAZON_URL + "/stores/author/" + authorID + "/about?ccs_id=6ce47a19-8d2f-4cba-9089-a8cda76c5f9b"
-	content, status, error := utils.Fetch(url)
+	content, status, error, _ := utils.Fetch(url)
 
 	if status == 404 {
 		return nil, utils.Report("Author not found")

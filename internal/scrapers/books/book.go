@@ -14,16 +14,36 @@ import (
 	"github.com/nleeper/goment"
 )
 
+func castBookData(json string) (*models.Book, string, error) {
+	response := &models.APIResponse{}
+
+	err := response.GetFrom(json)
+	if err != nil {
+		return nil, "", utils.Report("Can't convert api response to struct APIRepsonse: " + err.Error())
+	}
+
+	book := response.Migrate()
+
+	return &book, "", nil
+
+}
+
 func FetchBook(id string) (*models.Book, string, error) {
 	var result models.Book = models.Book{}
 
 	var url string = utils.AMAZON_URL + "/dp/" + id
-	content, statusCode, error := utils.Fetch(url)
+	content, statusCode, error, isDirect := utils.Fetch(url)
 
 	println("Updated link:", url)
 
 	if error != nil {
 		return nil, "unhandled_error", error
+	}
+
+	if isDirect {
+		return castBookData(content)
+	} else {
+		println(content)
 	}
 
 	if statusCode == 404 {
