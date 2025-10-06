@@ -68,7 +68,7 @@ type ReviewListItem struct {
 	Text     string   `json:"text"`
 }
 
-// GetFrom fills the APIResponse from a JSON string.
+// GetFrom populates the APIResponse from a JSON string.
 func (a *APIResponse) GetFrom(jsonStr string) error {
 	println("JSON String:")
 	println(jsonStr)
@@ -76,6 +76,11 @@ func (a *APIResponse) GetFrom(jsonStr string) error {
 }
 
 // Migrate converts the APIResponse into a Book struct.
+
+// The Migrate function extracts data from the APIResponse's Data field to populate a Book struct.
+// It calculates the average rating from the Reviews, either from a direct rating or by aggregating
+// ratings from RatingByStars. The function also sets default values for fields like Pages, Authors,
+// and Dimension, which are not provided in the API response. The resulting Book struct is returned.
 func (a *APIResponse) Migrate() Book {
 	d := a.Data
 
@@ -117,6 +122,7 @@ func (a *APIResponse) Migrate() Book {
 
 // --- Helper methods ---
 
+// BrandOrFallback returns the brand if it is set and not empty, otherwise returns the seller, or "Unknown" if neither is available.
 func (d Data) BrandOrFallback() string {
 	if d.Brand != nil && *d.Brand != "" {
 		return *d.Brand
@@ -127,6 +133,7 @@ func (d Data) BrandOrFallback() string {
 	return "Unknown"
 }
 
+// firstOrEmpty returns the first element of the list or an empty string if the list is empty.
 func firstOrEmpty(list []string) string {
 	if len(list) > 0 {
 		return list[0]
@@ -134,6 +141,7 @@ func firstOrEmpty(list []string) string {
 	return ""
 }
 
+// cleanDesc removes leading and trailing whitespace and replaces newlines with spaces in the given description.
 func cleanDesc(desc string) string {
 	return strings.TrimSpace(strings.ReplaceAll(desc, "\n", " "))
 }
