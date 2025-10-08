@@ -6,6 +6,8 @@ import (
 )
 
 // books
+var FetchGBook = books.FetchGBook
+
 var FetchBook = books.FetchBook
 var FetchBooks = books.FetchBooks
 

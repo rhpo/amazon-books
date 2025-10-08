@@ -398,7 +398,9 @@ func FetchBooks(page int) (*[]models.BookThumbnail, int, error) {
 	url := fmt.Sprintf("%s/gp/bestsellers/books/ref=zg_bs_pg_2_books?ie=UTF8&pg=%d", utils.AMAZON_URL, page)
 	books, pageCount, err := fetchAndParseBooks(url, false)
 	if err != nil {
-		return nil, 0, utils.Report("Failed to fetch books: " + err.Error())
+		// return nil, 0, utils.Report("Failed to fetch books: " + err.Error())
+		utils.Report("Failed to fetch books: " + err.Error())
+		return loadFromCache(fileName)
 	}
 
 	if len(*books) == 0 {

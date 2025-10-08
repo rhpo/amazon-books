@@ -16,6 +16,8 @@ type Book struct {
 
 	Authors   []AuthorType `json:"authors"`
 	Dimension Dimension    `json:"dimensions"`
+
+	IsGBook bool `json:"is_gbook"`
 }
 
 type BookThumbnail struct {
@@ -26,4 +28,6 @@ type BookThumbnail struct {
 
 	Authors []AuthorType `json:"authors"`
 	Rating  float32      `json:"rating"`
+
+	IsGBook bool `json:"is_gbook"`
 }

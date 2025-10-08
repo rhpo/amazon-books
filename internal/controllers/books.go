@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"amazon/internal/scrapers"
+	"amazon/internal/scrapers/books"
 	"amazon/internal/utils"
 	"amazon/models"
 	"strconv"
@@ -35,8 +36,8 @@ func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 		})
 	}
 
-	shuffled := utils.Shuffle(*books)
-	books = &shuffled
+	// shuffled := utils.Shuffle(*books)
+	// books = &shuffled
 
 	return c.Status(fiber.StatusOK).JSON(models.Response{
 		Error: "",
@@ -79,10 +80,41 @@ func (h *BookHandler) GetBookByID(c *fiber.Ctx) error {
 	})
 }
 
+func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
+	id := c.Params("id")
+	book, errCode, err := scrapers.FetchGBook(id)
+
+	status := fiber.StatusInternalServerError
+	if errCode == "not_found" {
+		status = fiber.StatusNotFound
+	}
+
+	if err != nil {
+		return c.Status(status).JSON(models.Response{
+			Error: err.Error(),
+			Code:  errCode,
+			Data:  nil,
+		})
+	}
+
+	// UPDATE: CLIENT ASKED TO NOT DISPLAY THE PRICE AND SEND IT AS AN EMAIL WITH HIS OWN FORMULA.
+	// apply new formatted price
+	// book.Price = utils.FormatPrice(book.Price)
+
+	// upscale image for better quality
+	book.Cover = utils.ResizeBookImage(book.Cover, 1000)
+
+	return c.Status(fiber.StatusOK).JSON(models.Response{
+		Error: "",
+		Code:  "success",
+		Data:  book,
+	})
+}
+
 func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 
 	query := c.Query("query")
-	page, err := strconv.Atoi(c.Query("page"))
+	_, err := strconv.Atoi(c.Query("page"))
 
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(models.Response{
@@ -92,7 +124,7 @@ func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 		})
 	}
 
-	books, pageCount, err := scrapers.SearchBooks(query, page)
+	books, pageCount, err := books.FetchGBooks(query, 30)
 	if err != nil {
 		utils.Report("Failed to search books: " + err.Error())
 

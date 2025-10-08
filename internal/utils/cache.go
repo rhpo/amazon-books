@@ -10,7 +10,12 @@ import (
 func CacheValid(path string, maxAge time.Duration) bool {
 	// make the parent directories recursively if they do not exist
 	if err := os.MkdirAll(CACHE_DIRECTORY, 0755); err != nil {
-		Report("Failed to create cache directory: " + err.Error())
+		Report("Failed to create parent cache directory: " + err.Error())
+		return false
+	}
+
+	if err := os.MkdirAll(CACHE_DIRECTORY+"/books", 0755); err != nil {
+		Report("Failed to create childbook cache directory: " + err.Error())
 		return false
 	}
 

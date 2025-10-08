@@ -1,6 +1,7 @@
 package books
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -28,8 +29,37 @@ func castBookData(json string) (*models.Book, string, error) {
 
 }
 
+func loadBookFromCache(fileName string) (*models.Book, string, error) {
+	content, _, err := utils.ReadFile(fileName)
+	if err != nil {
+		return nil, "cache_file_not_found", err
+	}
+
+	var cachedBook models.Book
+	err = utils.ParseJson(content, &cachedBook)
+	if err != nil {
+		return nil, "failed_to_parse_cache_file_json", utils.Report("Failed to parse cached content: " + err.Error())
+	}
+
+	return &cachedBook, "", nil
+}
+
+func saveBookToCache(fileName string, book models.Book) error {
+	cacheContent, err := utils.ToJson(book)
+	if err != nil {
+		return utils.Report("Failed to convert books to JSON: " + err.Error())
+	}
+
+	return utils.WriteFile(fileName, cacheContent)
+}
+
 func FetchBook(id string) (*models.Book, string, error) {
 	var result models.Book = models.Book{}
+
+	fileName := fmt.Sprintf("%s/%s.json", utils.BOOKS_CACHE_DIRECTORY, id)
+	if utils.CacheValid(fileName, utils.CACHE_DURATION) {
+		return loadBookFromCache(fileName)
+	}
 
 	var url string = utils.AMAZON_URL + "/dp/" + id
 	content, statusCode, error, isDirect := utils.Fetch(url)
@@ -407,6 +437,10 @@ func FetchBook(id string) (*models.Book, string, error) {
 		}
 
 		result.Price = float32(price)
+	}
+
+	if err := saveBookToCache(fileName, result); err != nil {
+		utils.Report("Failed to write cache file: " + err.Error())
 	}
 
 	return &result, "", nil

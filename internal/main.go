@@ -3,6 +3,7 @@ package main
 import (
 	"amazon/internal/database"
 	"amazon/internal/routes"
+	"amazon/internal/scrapers/books"
 	"amazon/internal/utils"
 	"log"
 	"os"
@@ -31,8 +32,14 @@ func setup() {
 
 }
 
-func main() {
+func init() {
 	setup()
+
+	gApiKey := os.Getenv("GOOGLE_API")
+	books.Init(gApiKey)
+}
+
+func main() {
 
 	app := fiber.New(fiber.Config{
 		BodyLimit: utils.MAX_FILE_SIZE,
@@ -45,8 +52,6 @@ func main() {
 	if allowedOrigins == "" {
 		utils.Report("Can't find ALLOWED_ORIGINS in environment variables", true)
 	}
-
-	println("Allowed Origins:", allowedOrigins)
 
 	// Use Fiber's built-in CORS middleware
 	app.Use(cors.New(cors.Config{
