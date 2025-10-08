@@ -64,23 +64,19 @@ func FetchBook(id string) (*models.Book, string, error) {
 	var url string = utils.AMAZON_URL + "/dp/" + id
 	content, statusCode, error, isDirect := utils.Fetch(url)
 
-	println("Updated link:", url)
-
 	if error != nil {
 		return nil, "unhandled_error", error
 	}
 
 	if isDirect {
 		return castBookData(content)
-	} else {
-		println(content)
 	}
 
 	if statusCode == 404 {
 		return nil, "not_found", utils.Report("Book not found")
 	}
 
-	{ // Create File book.html containing content
+	if utils.IS_DEVELOPMENT { // Create File book.html containing content
 		file, err := os.Create("book.html")
 
 		if err != nil {

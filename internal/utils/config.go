@@ -10,7 +10,7 @@ const (
 
 	CACHE_DIRECTORY       = "books_cache"
 	BOOKS_CACHE_DIRECTORY = "books_cache/books"
-	CACHE_DURATION        = 24 * time.Hour
+	CACHE_DURATION        = 7 * 24 * time.Hour // 1 Week
 	MAX_FILE_SIZE         = 25 * 1024 * 1024   // 25 MB
 	TOKEN_EXPIRY          = 3 * 24 * time.Hour // Duration for which the token is valid
 

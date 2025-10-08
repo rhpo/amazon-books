@@ -124,7 +124,7 @@ func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 		})
 	}
 
-	books, pageCount, err := books.FetchGBooks(query, 30)
+	books, pageCount, err := books.FetchGBooks(query, 50)
 	if err != nil {
 		utils.Report("Failed to search books: " + err.Error())
 

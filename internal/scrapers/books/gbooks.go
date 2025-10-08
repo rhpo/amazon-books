@@ -4,6 +4,7 @@ import (
 	"amazon/models"
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/nleeper/goment"
 	gbooks "google.golang.org/api/books/v1"
@@ -34,6 +35,16 @@ func Init(key string) error {
 	return err
 }
 
+func parseGoogleBooksDate(date string) goment.Goment {
+	gm, _ := goment.New(date, "YYYY-MM-DD")
+	if len(date) == 4 {
+		gm, _ = goment.New(date, "YYYY")
+	} else if len(date) == 7 {
+		gm, _ = goment.New(date, "YYYY-MM")
+	}
+	return *gm
+}
+
 func CastVolumeToBook(book *gbooks.Volume) models.Book {
 	res := models.Book{}
 	info := book.VolumeInfo
@@ -60,7 +71,9 @@ func CastVolumeToBook(book *gbooks.Volume) models.Book {
 
 	res.Publisher = info.Publisher
 
-	res.PubDate = info.PublishedDate
+	// Date
+	date := parseGoogleBooksDate(info.PublishedDate)
+	res.PubDate = date.ToTime().Format(time.RFC3339)
 
 	res.Language = info.Language
 
@@ -113,16 +126,6 @@ func CastVolumesToBookThumbnails(gbooks []*gbooks.Volume) *[]models.BookThumbnai
 	return &res
 }
 
-func parseGoogleBooksDate(date string) goment.Goment {
-	gm, _ := goment.New(date, "YYYY-MM-DD")
-	if len(date) == 4 {
-		gm, _ = goment.New(date, "YYYY")
-	} else if len(date) == 7 {
-		gm, _ = goment.New(date, "YYYY-MM")
-	}
-	return *gm
-}
-
 func gBooksFilter[T []*gbooks.Volume](books T) T {
 	filtered := make([]*gbooks.Volume, 0)
 
@@ -155,7 +158,7 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 
 	call := srv.Volumes.List(query)
 	if max > 0 {
-		call = call.MaxResults(int64(max)).Projection("FULL").PrintType("BOOKS").Filter("paid-ebooks").Filter("partial")
+		call = call.MaxResults(int64(max)).Projection("FULL").PrintType("BOOKS")
 	}
 	resp, err := call.Do()
 	if err != nil {
