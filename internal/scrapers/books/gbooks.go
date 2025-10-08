@@ -35,6 +35,7 @@ func Init(key string) error {
 	return err
 }
 
+// parseGoogleBooksDate parses a date string from Google Books into a goment.Goment.
 func parseGoogleBooksDate(date string) goment.Goment {
 	gm, _ := goment.New(date, "YYYY-MM-DD")
 	if len(date) == 4 {
