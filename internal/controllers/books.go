@@ -16,6 +16,7 @@ func NewBookHandler() *BookHandler {
 	return &BookHandler{}
 }
 
+// GetBooks handles the HTTP request to fetch books based on the page query parameter.
 func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 	page, err := strconv.Atoi(c.Query("page"))
 	if err != nil {
@@ -80,6 +81,7 @@ func (h *BookHandler) GetBookByID(c *fiber.Ctx) error {
 	})
 }
 
+// GetGBookByID retrieves a Google Book by its ID and returns the book details in JSON format.
 func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
 	id := c.Params("id")
 	book, errCode, err := scrapers.FetchGBook(id)
@@ -111,6 +113,7 @@ func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
 	})
 }
 
+// SearchBooks handles the search for books based on a query parameter.
 func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 
 	query := c.Query("query")

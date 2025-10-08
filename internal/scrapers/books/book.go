@@ -44,6 +44,8 @@ func loadBookFromCache(fileName string) (*models.Book, string, error) {
 	return &cachedBook, "", nil
 }
 
+// saveBookToCache saves a book to a cache file in JSON format.
+// It returns an error if the conversion to JSON or file writing fails.
 func saveBookToCache(fileName string, book models.Book) error {
 	cacheContent, err := utils.ToJson(book)
 	if err != nil {
