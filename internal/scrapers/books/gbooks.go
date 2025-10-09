@@ -158,7 +158,7 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 
 	call := srv.Volumes.List(query)
 	if max > 0 {
-		call = call.MaxResults(int64(max)).Projection("FULL").PrintType("BOOKS")
+		call = call.MaxResults(int64(max)).Projection("FULL")
 	}
 	resp, err := call.Do()
 	if err != nil {
