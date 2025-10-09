@@ -28,7 +28,7 @@ func Init(key string) error {
 
 	var err error
 	if key != "" {
-		srv, err = gbooks.NewService(ctx, option.WithAPIKey(apiKey))
+		srv, err = gbooks.NewService(ctx, option.WithoutAuthentication())
 	} else {
 		srv, err = gbooks.NewService(ctx)
 	}
@@ -156,10 +156,12 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 		}
 	}
 
-	call := srv.Volumes.List(query)
-	if max > 0 {
-		call = call.MaxResults(int64(max)).Projection("FULL")
-	}
+	call := srv.Volumes.List(query).MaxResults(40).OrderBy("relevance").PrintType("BOOKS")
+
+	// if max > 0 {
+	// 	call = call.MaxResults(int64(max)).Projection("FULL").OrderBy("relevance")
+	// }
+
 	resp, err := call.Do()
 	if err != nil {
 		return nil, 0, err
@@ -177,7 +179,7 @@ func FetchGBook(id string) (*models.Book, string, error) {
 		}
 	}
 
-	vol, err := srv.Volumes.Get(id).Projection("FULL").Country("FR").Do()
+	vol, err := srv.Volumes.Get(id).Do()
 	if err != nil {
 		return nil, "cannot_get_volume", err
 	}
