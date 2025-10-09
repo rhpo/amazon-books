@@ -169,7 +169,7 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 	return CastVolumesToBookThumbnails(filtered), 1, nil
 }
 
-// FetchGBook retrieves one book by its ID.
+// FetchGBook retrieves one book by its ID from the Google Books API.
 func FetchGBook(id string) (*models.Book, string, error) {
 	if srv == nil {
 		if err := Init(""); err != nil {
