@@ -177,7 +177,7 @@ func FetchGBook(id string) (*models.Book, string, error) {
 		}
 	}
 
-	vol, err := srv.Volumes.Get(id).Projection("FULL").Do()
+	vol, err := srv.Volumes.Get(id).Projection("FULL").Country("FR").Do()
 	if err != nil {
 		return nil, "cannot_get_volume", err
 	}
