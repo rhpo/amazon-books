@@ -8,6 +8,7 @@ import (
 
 	"github.com/nleeper/goment"
 	gbooks "google.golang.org/api/books/v1"
+	"google.golang.org/api/googleapi"
 	"google.golang.org/api/option"
 )
 
@@ -162,7 +163,7 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 	// 	call = call.MaxResults(int64(max)).Projection("FULL").OrderBy("relevance")
 	// }
 
-	resp, err := call.Do()
+	resp, err := call.Do(googleapi.QueryParameter("country", "FR"))
 	if err != nil {
 		return nil, 0, err
 	}
