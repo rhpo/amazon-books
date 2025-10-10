@@ -83,6 +83,7 @@ func IsAudible(bookText string) bool {
 	return audible && !kindle && !poche && !relie && !broche
 }
 
+// NormalizeQuery trims whitespace from the query and encodes it for search.
 func NormalizeQuery(query string) string {
 	query = strings.TrimSpace(query)
 	if query == "" {
@@ -94,6 +95,7 @@ func NormalizeQuery(query string) string {
 	return query
 }
 
+// EncodeSearchQuery encodes a search query string for safe URL transmission.
 func EncodeSearchQuery(query string) string {
 	return url.QueryEscape(query)
 }
