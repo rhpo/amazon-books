@@ -12,6 +12,7 @@ var FetchBook = books.FetchBook
 var FetchBooks = books.FetchBooks
 
 var SearchBooks = books.SearchBooks
+var LirekaSearchBooks = books.LirekaSearchBooks
 
 // authors
 var FetchAuthor = authors.FetchAuthor

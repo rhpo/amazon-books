@@ -15,7 +15,7 @@ func RegisterBookRoutes(router fiber.Router) {
 	router.Get("/", bookHandler.GetBooks)
 
 	// domain.com/books/search
-	router.Get("/search", bookHandler.SearchBooks)
+	router.Get("/search", bookHandler.SearchLirekaBooks)
 
 	// domain.com/books/book/alt
 	router.Get("/:id", bookHandler.GetBookByID)

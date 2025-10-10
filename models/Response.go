@@ -10,3 +10,8 @@ type BooksResponse struct {
 	PageCount int             "json:\"pages\""
 	Books     []BookThumbnail `json:"books"`
 }
+
+type LirekaBooksResponse struct {
+	PageCount int    "json:\"pages\""
+	Books     []Book `json:"books"`
+}
