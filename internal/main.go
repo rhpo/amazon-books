@@ -42,6 +42,7 @@ func init() {
 	books.Init(gApiKey)
 }
 
+// main is the entry point of the application, initializing the Fiber web server and setting up routes.
 func main() {
 
 	if false {
@@ -82,10 +83,17 @@ func main() {
 	log.Fatal(app.Listen(":" + PORT))
 }
 
+// IsSaved checks if the bookID is present in the ids slice.
 func IsSaved(ids []string, bookID string) bool {
 	return slices.Contains(ids, bookID)
 }
 
+// scrapePage scrapes book information from Amazon based on a search query and page number.
+//
+// It retrieves a list of books matching the query, checks for existing cached book data, and fetches
+// new book details if the cache is invalid or the book is not already saved. The function handles errors
+// by panicking and prints the progress of the scraping process. It also includes a delay between requests
+// to avoid overwhelming the server.
 func scrapePage(query string, page int) {
 	booksAmazon, _, err := books.SearchBooks(query, page)
 
