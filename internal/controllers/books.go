@@ -111,6 +111,7 @@ func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
 	})
 }
 
+// SearchBooks handles the search for books based on a query and pagination.
 func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 
 	query := c.Query("query")
