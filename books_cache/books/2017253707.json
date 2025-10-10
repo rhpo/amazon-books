@@ -1,0 +1,40 @@
+{
+  "id": "2017253707",
+  "pages": 48,
+  "title": "Astérix - Astérix en Lusitanie - n°41",
+  "cover": "https://m.media-amazon.com/images/I/81pfxjDmRhL._SL1500_.jpg",
+  "publication_date": "2025-01-23T00:00:00+01:00",
+  "language": "French",
+  "publisher": "Hachette Asterix",
+  "description": "Le 23 octobre MMXXV paraîtra le nouvel album des aventures du plus célèbre des Gaulois : Astérix en Lusitanie !\n\nPar un beau matin de printemps, un inconnu débarque au village. Il arrive de Lusitanie, cette terre de soleil à l’ouest de l’Hispanie qui se trouve également sous la férule de Rome. Cet ancien esclave croisé dans le Domaine des dieux est venu demander de l’aide à nos irréductibles Gaulois car il connaît les effets puissants de la potion magique. Pour Astérix et Obélix, une nouvelle aventure commence !",
+  "price": 10.33,
+  "rating": -1,
+  "authors": [
+    {
+      "id": "",
+      "name": "René Goscinny",
+      "link": "/-/en/s/ref=dp_byline_sr_book_1?ie=UTF8\u0026field-author=Ren%C3%A9+Goscinny\u0026text=Ren%C3%A9+Goscinny\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Albert Uderzo",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Albert+Uderzo\u0026text=Albert+Uderzo\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Fabcaro",
+      "link": "/-/en/s/ref=dp_byline_sr_book_3?ie=UTF8\u0026field-author=Fabcaro\u0026text=Fabcaro\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Didier Conrad",
+      "link": "/-/en/s/ref=dp_byline_sr_book_4?ie=UTF8\u0026field-author=Didier+Conrad\u0026text=Didier+Conrad\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 29.5,
+    "depth": 0.9,
+    "width": 22.4
+  },
+  "is_gbook": false
+}

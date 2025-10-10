@@ -60,3 +60,32 @@ func Fetch(targetURL string) (string, int, error, bool) {
 
 	return string(respBody), resp.StatusCode, nil, false
 }
+
+func _Fetch(targetURL string) (string, int, error, bool) {
+	// proxyUrl, err := url.Parse("https://spa8ysiveq:rvvVowhI_qc13ItK67@gate.decodo.com:7000")
+	// if err != nil {
+	// 	return "", 500, err, false
+	// }
+
+	client := &http.Client{
+		// Transport: &http.Transport{Proxy: http.ProxyURL(proxyUrl)},
+	}
+	req, err := http.NewRequest("GET", targetURL, nil)
+	if err != nil {
+		return "", 500, err, false
+	}
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return "", 500, fmt.Errorf("failed to fetch via scraping-bot.io: %w", err), true
+	}
+	defer resp.Body.Close()
+	respBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return "", 500, fmt.Errorf("failed to read response body: %w", err), true
+	}
+
+	println(string(respBody))
+
+	return string(respBody), resp.StatusCode, nil, false
+}

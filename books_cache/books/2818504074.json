@@ -1,0 +1,25 @@
+{
+  "id": "2818504074",
+  "pages": 544,
+  "title": "Le grand livre des philosophes: Clés d'accès aux oeuvres classiques",
+  "cover": "https://m.media-amazon.com/images/I/71g4ld85JZL._SL1500_.jpg",
+  "publication_date": "2016-01-09T00:00:00+01:00",
+  "language": "French",
+  "publisher": "Fayard/Pluriel",
+  "description": "Le principe de ce livre est simple : rendre accessibles et intelligibles les œuvres des plus grands philosophes de tous les temps. Chaque philosophe y est ainsi considéré à travers une œuvre majeure de son répertoire, en partant du principe que mieux vaut approfondir un texte plutôt que papillonner autour de plusieurs. Platon, qui inaugure ce volume, est donc décrypté via La République, Marc Aurèle par les Pensées, Machiavel par Le Prince, Spinoza par l’Éthique, Karl Marx par Le Capital, Nietzsche par Ainsi parlait Zarathoustra, Heidegger par Être et Temps, Sartre par L’Être et le Néant, etc.  \nÀ travers trente et un auteurs qui ont traversé les siècles, le lecteur désireux d’appréhender autrement la philosophie aura la possibilité de nouer une relation avec elle dans un langage clair et une atmosphère détendue.",
+  "price": 10.43,
+  "rating": 4.6,
+  "authors": [
+    {
+      "id": "B009H923GY",
+      "name": "Robert Zimmer",
+      "link": "/-/en/Robert-Zimmer/e/B009H923GY/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 17.8,
+    "depth": 2.8,
+    "width": 11
+  },
+  "is_gbook": false
+}

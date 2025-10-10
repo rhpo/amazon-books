@@ -1,0 +1,30 @@
+{
+  "id": "2080260847",
+  "pages": 32,
+  "title": "Le voleur de feuilles",
+  "cover": "https://m.media-amazon.com/images/I/81OJRbRHSNL._SL1500_.jpg",
+  "publication_date": "2022-01-07T00:00:00+01:00",
+  "language": "French",
+  "publisher": "PERE CASTOR",
+  "description": "\"Rouge, orange, doré... Rouge, orange, doré... Rouge, orange, do... MAIS, MAIS, MAIS ? ÇA NE VA PAS DU TOUT ! OISEAU, ON M'A VOLÉ UNE FEUILLE ! ! !\" Une histoire pleine d'humour aux couleurs de l'automne pour comprendre les changements de saison.",
+  "price": 13.9,
+  "rating": 4.9,
+  "authors": [
+    {
+      "id": "B00FQGPX3W",
+      "name": "Alice Hemming",
+      "link": "/-/en/Alice-Hemming/e/B00FQGPX3W/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Nicola Slater",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Nicola+Slater\u0026text=Nicola+Slater\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 28.3,
+    "depth": 1,
+    "width": 25.7
+  },
+  "is_gbook": false
+}

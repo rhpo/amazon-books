@@ -1,0 +1,30 @@
+{
+  "id": "2290385026",
+  "pages": 80,
+  "title": "Comment être heureux",
+  "cover": "https://m.media-amazon.com/images/I/41qNTGuVtHL._SL1500_.jpg",
+  "publication_date": "2023-01-08T00:00:00+01:00",
+  "language": "Français",
+  "publisher": "J'AI LU",
+  "description": "Personnage ombrageux, taciturne et pessimiste, Arthur Schopenhauer est cependant l'auteur d'une oeuvre qui défend l'épanouissement et le génie de l'individu contre les maux de la société. Dans un monde où les hommes oscillent entre \"l'ennui et la douleur\", le chemin de la félicité ne semble pas tracé d'avance... La voie qui se dessine au gré des textes rassemblés dans ce recueil est celle d'un état de neutralité qui permettrait de s'affranchir de la souffrance et de vivre avec les coups du sort. Tour à tour satiriques, mordantes et revigorantes, ces réflexions pragmatiques sont issues des Aphorismes sur la sagesse dans la vie.",
+  "price": 3,
+  "rating": 4.4,
+  "authors": [
+    {
+      "id": "B00EXIXZ5W",
+      "name": "Arthur Schopenhauer",
+      "link": "/Arthur-Schopenhauer/e/B00EXIXZ5W/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "J.-A. Cantacuzène",
+      "link": "/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=J.-A.+Cantacuz%C3%A8ne\u0026text=J.-A.+Cantacuz%C3%A8ne\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 20.5,
+    "depth": 0.6,
+    "width": 13.1
+  },
+  "is_gbook": false
+}

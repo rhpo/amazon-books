@@ -1,0 +1,30 @@
+{
+  "id": "2070650642",
+  "pages": 184,
+  "title": "VENDREDI OU LA VIE SAUVAGE",
+  "cover": "https://m.media-amazon.com/images/I/81vr9tPhLAL._SL1500_.jpg",
+  "publication_date": "2012-01-02T00:00:00+01:00",
+  "language": "French",
+  "publisher": "Folio Junior",
+  "description": "Une aventure inoubliable, une ode à la liberté et à la nature  \nLe 29 septembre 1759, le navire \" La Virginie\" fait naufrage. Seul rescapé, Robinson échoue sur une île déserte où il tente de survivre à une nature hostile en déployant des trésors d'ingéniosité. Mais son existence solitaire bascule le jour où un autre être humain fait son apparition sur l'île : Vendredi, le sauvage... . Titre recommandé par l'Éducation nationale en classe de 6e et 5e",
+  "price": 6.2,
+  "rating": 4.6,
+  "authors": [
+    {
+      "id": "B000APBLBM",
+      "name": "Michel Tournier",
+      "link": "/-/en/Michel-Tournier/e/B000APBLBM/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Jean-Claude Götting",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Jean-Claude+G%C3%B6tting\u0026text=Jean-Claude+G%C3%B6tting\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 18,
+    "depth": 1.2,
+    "width": 12.5
+  },
+  "is_gbook": false
+}

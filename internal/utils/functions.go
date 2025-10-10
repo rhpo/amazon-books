@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"math/rand"
+	"net/url"
 	"regexp"
 	"strings"
 )
@@ -80,4 +81,19 @@ func IsAudible(bookText string) bool {
 	broche := strings.Contains(bookText, "broché")
 
 	return audible && !kindle && !poche && !relie && !broche
+}
+
+func NormalizeQuery(query string) string {
+	query = strings.TrimSpace(query)
+	if query == "" {
+		return ""
+	}
+
+	query = EncodeSearchQuery(query)
+
+	return query
+}
+
+func EncodeSearchQuery(query string) string {
+	return url.QueryEscape(query)
 }

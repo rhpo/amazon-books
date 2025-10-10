@@ -1,0 +1,35 @@
+{
+  "id": "0981531644",
+  "pages": 852,
+  "title": "Programming in Scala: A Comprehensive Step-by-Step Guide, 2nd Edition",
+  "cover": "https://m.media-amazon.com/images/I/91PYK8yKFXL._SL1500_.jpg",
+  "publication_date": "2011-01-10T00:00:00+01:00",
+  "language": "English",
+  "publisher": "Artima Inc",
+  "description": "Scala is an object-oriented programming language for the Java Virtual Machine. In addition to being object-oriented, Scala is also a functional language, and combines the best approaches to OO and functional programming. In Italian, Scala means a stairway, or steps―indeed, Scala lets you step up to a programming environment that incorporates some of the best recent thinking in programming language design while also letting you use all your existing Java code. Artima is very pleased to publish a new edition of the best-selling book on Scala, written by the designer of the language, Martin Odersky. Co-authored by Lex Spoon and Bill Venners, this book takes a step-by-step tutorial approach to teaching you Scala. Starting with the fundamental elements of the language, Programming in Scala introduces functional programming from the practitioner's perspective, and describes advanced language features that can make you a better, more productive developer.",
+  "price": 40,
+  "rating": 4.5,
+  "authors": [
+    {
+      "id": "B004PDMUGA",
+      "name": "Martin Odersky",
+      "link": "/-/en/Martin-Odersky/e/B004PDMUGA/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Lex Spoon",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Lex+Spoon\u0026text=Lex+Spoon\u0026sort=relevancerank\u0026search-alias=books-fr-intl-us"
+    },
+    {
+      "id": "B004LW9QJE",
+      "name": "Bill Venners",
+      "link": "/-/en/Bill-Venners/e/B004LW9QJE/ref=dp_byline_cont_book_3"
+    }
+  ],
+  "dimensions": {
+    "height": 23.5,
+    "depth": 3.18,
+    "width": 18.42
+  },
+  "is_gbook": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "2416009516",
+  "pages": 192,
+  "title": "100 citations philosophiques expliquées: Une brève histoire de la philosophie et des grands auteurs",
+  "cover": "https://m.media-amazon.com/images/I/71RF5JmFxaL._SL1500_.jpg",
+  "publication_date": "2025-05-20T00:00:00+01:00",
+  "language": "French",
+  "publisher": "EYROLLES",
+  "description": "Quand la philosophie se raconte en citations « L'homme est un loup pour l'homme » « Je pense donc je suis » sont des phrases souvent entendues mais pas toujours comprises ! L'accès direct aux oeuvres des grands philosophes peut se révéler ardu ou décourageant sans le bon accompagnement. C'est précisément le but de ce livre, de rendre accessible la pensée des grands auteurs. En 100 citations expliquées et classées par notions, cet ouvrage offre un parcours joyeux et instructif dans l'histoire de la philosophie à la rencontre de Platon, Sartre ou Arendt. Pour chacune des citations, le lecteur peut découvrir : - une mise en contexte dans l'oeuvre et l'époque du philosophe ; - une explication du problème posé ; - des exemples de la vie quotidienne ; - une citation complémentaire ; - des pistes de lecture viennent éclairer chaque thématique.",
+  "price": 6.64,
+  "rating": 5,
+  "authors": [
+    {
+      "id": "B004MPFMMA",
+      "name": "Florence Perrin",
+      "link": "/-/en/Florence-Perrin/e/B004MPFMMA/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Alexis Rosenbaum",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Alexis+Rosenbaum\u0026text=Alexis+Rosenbaum\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 17.8,
+    "depth": 1.1,
+    "width": 10.8
+  },
+  "is_gbook": false
+}

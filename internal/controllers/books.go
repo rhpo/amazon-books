@@ -114,7 +114,7 @@ func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
 func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 
 	query := c.Query("query")
-	_, err := strconv.Atoi(c.Query("page"))
+	page, err := strconv.Atoi(c.Query("page"))
 
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(models.Response{
@@ -124,7 +124,7 @@ func (h *BookHandler) SearchBooks(c *fiber.Ctx) error {
 		})
 	}
 
-	books, pageCount, err := books.FetchGBooks(query, 40)
+	books, pageCount, err := books.SearchBooks(query, page)
 	if err != nil {
 		utils.Report("Failed to search books: " + err.Error())
 

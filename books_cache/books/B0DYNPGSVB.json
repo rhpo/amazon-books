@@ -1,0 +1,30 @@
+{
+  "id": "B0DYNPGSVB",
+  "pages": 388,
+  "title": "Thriller de l'avent - le roman maudit",
+  "cover": "https://m.media-amazon.com/images/I/51-iVJmsl9L._SL1500_.jpg",
+  "publication_date": "2025-01-25T00:00:00+01:00",
+  "language": "French",
+  "publisher": "Auzou",
+  "description": "Le premier Thriller de l'avent avec Franck Thilliez ! Attention : le lire, c'est affronter le pire...\n\n1er décembre.  \nNaël découvre un carnet devant chez lui.  \nLe carnet de Léo, kidnappé il y a un an, jour pour jour.  \nDésormais, leurs destins sont liés.  \nDésormais, Naël est coincé dans une journée qui recommence, encore et encore.  \nUne journée pour découvrir qui est Léo.  \nUne journée pour sauver sa propre vie.  \nUne journée pour mourir.",
+  "price": 18.95,
+  "rating": 3.8,
+  "authors": [
+    {
+      "id": "B004MS5WSQ",
+      "name": "Franck Thilliez",
+      "link": "/-/en/Franck-Thilliez/e/B004MS5WSQ/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Thomas Gilbert",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Thomas+Gilbert\u0026text=Thomas+Gilbert\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 21.2,
+    "depth": 2.7,
+    "width": 15.4
+  },
+  "is_gbook": false
+}

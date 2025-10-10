@@ -1,0 +1,30 @@
+{
+  "id": "2382884169",
+  "pages": 240,
+  "title": "Solo Leveling T19",
+  "cover": "https://m.media-amazon.com/images/I/81aPq4BWmwL._SL1500_.jpg",
+  "publication_date": "2025-01-01T00:00:00+01:00",
+  "language": "French",
+  "publisher": "Kbooks",
+  "description": "Lorsque d'étranges portails sont apparus aux quatre coins du monde, l'humanité a dû trouver une parade pour ne pas finir massacrée par les griffes des monstres des monstres qui en sortent. Dans le même temps, certaines personnes ont développé des capacités permettant de les chasser. Ces combattants intrépides n'hésitent pas à foncer au coeur des donjons pour combattre les créatures qu'ils abritent.",
+  "price": 14.95,
+  "rating": 5,
+  "authors": [
+    {
+      "id": "",
+      "name": "Disciples(Redice Studio)",
+      "link": "/-/en/s/ref=dp_byline_sr_book_1?ie=UTF8\u0026field-author=Disciples%28Redice+Studio%29\u0026text=Disciples%28Redice+Studio%29\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Chugong",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Chugong\u0026text=Chugong\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 21,
+    "depth": 1.4,
+    "width": 15
+  },
+  "is_gbook": false
+}

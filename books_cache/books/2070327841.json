@@ -1,0 +1,25 @@
+{
+  "id": "2070327841",
+  "pages": 464,
+  "title": "L'étonnement philosophique",
+  "cover": "https://m.media-amazon.com/images/I/81w+rN6yzSL._SL1500_.jpg",
+  "publication_date": "1993-01-01T00:00:00+01:00",
+  "language": "French",
+  "publisher": "FOLIO ESSAIS",
+  "description": "Première édition française",
+  "price": 11.28,
+  "rating": 4.5,
+  "authors": [
+    {
+      "id": "B004N1S3YW",
+      "name": "Jeanne Hersch",
+      "link": "/-/en/Jeanne-Hersch/e/B004N1S3YW/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 18,
+    "depth": 1.9,
+    "width": 11
+  },
+  "is_gbook": false
+}

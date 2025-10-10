@@ -4,7 +4,6 @@ import (
 	"amazon/internal/utils"
 	"amazon/models"
 	"fmt"
-	"net/url"
 	"strconv"
 	"strings"
 
@@ -416,26 +415,8 @@ func FetchBooks(page int) (*[]models.BookThumbnail, int, error) {
 	return books, pageCount, nil
 }
 
-func encodeSearchQuery(query string) string {
-	return url.QueryEscape(query)
-}
-
-func normalizeQuery(query string) (string, error) {
-	query = strings.TrimSpace(query)
-	if query == "" {
-		return "", utils.Report("Query cannot be empty")
-	}
-
-	query = encodeSearchQuery(query)
-
-	return query, nil
-}
-
 func SearchBooks(query string, page int) (*[]models.BookThumbnail, int, error) {
-	normalizedQuery, err := normalizeQuery(query)
-	if err != nil {
-		return nil, 0, err
-	}
+	normalizedQuery := utils.NormalizeQuery(query)
 
 	// Check cache first
 	fileName := fmt.Sprintf("%s/search-%s-%d-*.json", utils.CACHE_DIRECTORY, normalizedQuery, page)

@@ -5,8 +5,11 @@ import (
 	"amazon/internal/routes"
 	"amazon/internal/scrapers/books"
 	"amazon/internal/utils"
+	"fmt"
 	"log"
 	"os"
+	"slices"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
@@ -41,6 +44,11 @@ func init() {
 
 func main() {
 
+	if false {
+		scrapeCategories()
+		return
+	}
+
 	app := fiber.New(fiber.Config{
 		BodyLimit: utils.MAX_FILE_SIZE,
 	})
@@ -72,4 +80,76 @@ func main() {
 	})
 
 	log.Fatal(app.Listen(":" + PORT))
+}
+
+func IsSaved(ids []string, bookID string) bool {
+	return slices.Contains(ids, bookID)
+}
+
+func scrapePage(query string, page int) {
+	booksAmazon, _, err := books.SearchBooks(query, page)
+
+	if err != nil {
+		panic(err)
+	}
+
+	bookIDs := []string{}
+	entries, err := os.ReadDir("books_cache/books")
+	if err != nil {
+		panic(err)
+	}
+	for _, entry := range entries {
+		if !entry.IsDir() {
+			name := entry.Name()
+			if len(name) > 5 && name[len(name)-5:] == ".json" {
+				bookIDs = append(bookIDs, name[:len(name)-5])
+			}
+		}
+	}
+
+	var savedNum int = 0
+
+	for _, bookThumbnail := range *booksAmazon {
+
+		fileName := fmt.Sprintf("%s/%s.json", utils.BOOKS_CACHE_DIRECTORY, bookThumbnail.ID)
+		if !utils.CacheValid(fileName, 30*24*time.Hour) || !IsSaved(bookIDs, bookThumbnail.ID) {
+			book, _, err := books.FetchBook(bookThumbnail.ID)
+
+			if err != nil {
+				panic(err)
+			}
+
+			println("Saved:", book.Title, "ID:", book.ID)
+			savedNum++
+
+			time.Sleep(1 * time.Second)
+		} else {
+			println("Already saved:", bookThumbnail.Title, "ID:", bookThumbnail.ID)
+
+		}
+
+		fmt.Printf("Progress: %.0f\n", float64(len(bookIDs)+savedNum)/float64(len(*booksAmazon))*100)
+
+	}
+}
+
+func scrapeCategories() {
+
+	const maxPages int = 2
+
+	categories := [...]string{
+		"Philosophie", "Développement Personnel", "Histoire", "Sciences", "Actualité, Politique et Société", "Adolescents", "Arts et photographie", "Bandes dessinées pour enfants", "Beaux livres", "Calendriers et Agendas", "Livres de cuisine, cuisine et vins", "Référence", "Droit", "Entreprise et Bourse", "Études supérieures", "Famille et bien-être", "Science-fiction et Fantasy", "Humour", "Informatique et internet", "Livres pour enfants", "Loisirs créatifs, décoration et maison", "Manga", "Nature et animaux", "Religions et Spiritualités", "Romance et littérature sentimentale", "Romans et littérature", "Mystère et suspense", "Santé, Forme et Diététique", "Sciences, Techniques et Médecine", "Sciences humaines", "Scolaire et Parascolaire", "Sports et loisirs", "Tourisme et voyages",
+	}
+
+	for i, category := range categories {
+		categories[i] = utils.NormalizeQuery(categories[i])
+
+		for i := range maxPages {
+			println("Scraping category:", category, "/ page", i+1)
+			scrapePage(categories[i], i+1)
+			println("Finished scraping category:", category, "/ page", i+1)
+
+		}
+	}
+
 }

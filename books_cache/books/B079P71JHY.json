@@ -1,0 +1,30 @@
+{
+  "id": "B079P71JHY",
+  "pages": 0,
+  "title": "Spark: The Definitive Guide: Big Data Processing Made Simple (English Edition)",
+  "cover": "https://m.media-amazon.com/images/I/91LxYzqUn0L._SL1500_.jpg",
+  "publication_date": "2018-01-08T00:00:00+01:00",
+  "language": "English",
+  "publisher": "O'Reilly Media",
+  "description": "Learn how to use, deploy, and maintain Apache Spark with this comprehensive guide, written by the creators of the open-source cluster-computing framework. With an emphasis on improvements and new features in Spark 2.0, authors Bill Chambers and Matei Zaharia break down Spark topics into distinct sections, each with unique goals.\n\nYouâ??ll explore the basic operations and common functions of Sparkâ??s structured APIs, as well as Structured Streaming, a new high-level API for building end-to-end streaming applications. Developers and system administrators will learn the fundamentals of monitoring, tuning, and debugging Spark, and explore machine learning techniques and scenarios for employing MLlib, Sparkâ??s scalable machine-learning library.\n\n- Get a gentle overview of big data and Spark\n- Learn about DataFrames, SQL, and Datasetsâ??Sparkâ??s core APIsâ??through worked examples\n- Dive into Sparkâ??s low-level APIs, RDDs, and execution of SQL and DataFrames\n- Understand how Spark runs on a cluster\n- Debug, monitor, and tune Spark clusters and applications\n- Learn the power of Structured Streaming, Sparkâ??s stream-processing engine\n- Learn how you can apply MLlib to a variety of problems, including classification or recommendation",
+  "price": 40.08,
+  "rating": 4.5,
+  "authors": [
+    {
+      "id": "B07BJZ42XJ",
+      "name": "Bill Chambers",
+      "link": "/-/en/Bill-Chambers/e/B07BJZ42XJ/ref=dp_byline_cont_ebooks_1"
+    },
+    {
+      "id": "",
+      "name": "Matei Zaharia",
+      "link": "/-/en/s/ref=dp_byline_sr_ebooks_2?ie=UTF8\u0026field-author=Matei+Zaharia\u0026text=Matei+Zaharia\u0026sort=relevancerank\u0026search-alias=digital-text"
+    }
+  ],
+  "dimensions": {
+    "height": 0,
+    "depth": 0,
+    "width": 0
+  },
+  "is_gbook": false
+}

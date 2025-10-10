@@ -1,0 +1,45 @@
+{
+  "id": "2340039622",
+  "pages": 832,
+  "title": "Philosophie: Le manuel",
+  "cover": "https://m.media-amazon.com/images/I/61ObE8iXV1L._SL1500_.jpg",
+  "publication_date": "2020-01-09T00:00:00+01:00",
+  "language": "French",
+  "publisher": "ELLIPSES",
+  "description": "Tout le programme de philosophie des classes de Terminale, assorti des textes des plus grands philosophes.",
+  "price": 18.48,
+  "rating": 4.4,
+  "authors": [
+    {
+      "id": "B004MTTV14",
+      "name": "Pascal Cauquais",
+      "link": "/-/en/Pascal-Cauquais/e/B004MTTV14/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "B00CXEADL2",
+      "name": "Jean-Luc Bouyeure",
+      "link": "/-/en/Jean-Luc-Bouyeure/e/B00CXEADL2/ref=dp_byline_cont_book_2"
+    },
+    {
+      "id": "",
+      "name": "Collectif",
+      "link": "/s/ref=dp_byline_sr_book_3?ie=UTF8\u0026field-author=Collectif\u0026text=Collectif\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Jean Montenot",
+      "link": "/-/en/s/ref=dp_byline_sr_book_4?ie=UTF8\u0026field-author=Jean+Montenot\u0026text=Jean+Montenot\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Philippe Ducat",
+      "link": "/-/en/s/ref=dp_byline_sr_book_5?ie=UTF8\u0026field-author=Philippe+Ducat\u0026text=Philippe+Ducat\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 21,
+    "depth": 4.2,
+    "width": 14.4
+  },
+  "is_gbook": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "2290415626",
+  "pages": 416,
+  "title": "La psy",
+  "cover": "https://m.media-amazon.com/images/I/61DiNU1s4JL._SL1500_.jpg",
+  "publication_date": "2025-04-20T00:00:00+01:00",
+  "language": "French",
+  "publisher": "J'AI LU",
+  "description": "Jeunes mariés, Tricia et Ethan recherchent la maison de leurs rêves. Alors qu'ils visitent le manoir isolé de la docteure Adrienne Hale, une psychiatre disparue trois ans plus tôt, ils se retrouvent piégés par une violente tempête de neige. Au grand effroi de Tricia, qui est persuadée que quelque chose de terrible s'est produit dans cette demeure. Et puis, il y a ces empreintes de pas récentes sur le parquet, comme si quelqu'un vivait encore là... Par hasard, Tricia découvre une pièce secrète qui renferme les enregistrements audio de chaque patient de la docteure Hale. Le voile de mystère qui recouvre la disparition de la psy se lève lentement. Mais déterrer des secrets enfouis est un jeu dangereux...",
+  "price": 8.6,
+  "rating": 4.4,
+  "authors": [
+    {
+      "id": "B00ELQLN2I",
+      "name": "Freida McFadden",
+      "link": "/-/en/Freida-McFadden/e/B00ELQLN2I/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "",
+      "name": "Karine Forestier",
+      "link": "/-/en/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Karine+Forestier\u0026text=Karine+Forestier\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 17.7,
+    "depth": 2.2,
+    "width": 11
+  },
+  "is_gbook": false
+}

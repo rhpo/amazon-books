@@ -1,0 +1,55 @@
+{
+  "id": "2401073655",
+  "pages": 544,
+  "title": "La philosophie de A à Z (nouvelle édition): les auteurs, les oeuvres et les notions en philo",
+  "cover": "https://m.media-amazon.com/images/I/41MJiewfxQL._SL1500_.jpg",
+  "publication_date": "2021-01-06T00:00:00+01:00",
+  "language": "Français",
+  "publisher": "Hatier",
+  "description": "La nouvelle édition du dictionnaire de référence en philosophie : un outil indispensable pour les lycéens et les étudiants du 1er cycle universitaire.  \n• Classés dans l’ordre alphabétique, près de 1 000 articles permettant de couvrir :  \n– les notions et les concepts clés ;  \n– les auteurs majeurs ;  \n– les mythes et personnages symboliques.  \n• Cette nouvelle édition comprend de nouvelles entrées en lien avec l’évolution de la discipline et le nouveau programme de philosophie en Terminale : chaque notion du bac est associée à une notice développée et intègre une planche de citations expliquées.  \n• Un outil indispensable aux lycéens de Terminale, pour préparer l’épreuve finale de philosophie, et aux étudiants du 1er cycle, pour approfondir leur culture philosophique. Un ouvrage qui s'adresse également à tous ceux qui s'intéressent à la philosophie.",
+  "price": 13.95,
+  "rating": 4.6,
+  "authors": [
+    {
+      "id": "B004N837J6",
+      "name": "Laurence Hansen-Løve",
+      "link": "/Laurence-Hansen-L%C3%B8ve/e/B004N837J6/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "B004N1T382",
+      "name": "Pierre Kahn",
+      "link": "/Pierre-Kahn/e/B004N1T382/ref=dp_byline_cont_book_2"
+    },
+    {
+      "id": "B004N6I5CW",
+      "name": "Elisabeth Clément",
+      "link": "/Elisabeth-Cl%C3%A9ment/e/B004N6I5CW/ref=dp_byline_cont_book_3"
+    },
+    {
+      "id": "B004N6I58Q",
+      "name": "Chantal Demonque",
+      "link": "/Chantal-Demonque/e/B004N6I58Q/ref=dp_byline_cont_book_4"
+    },
+    {
+      "id": "",
+      "name": "Michaël Foessel",
+      "link": "/s/ref=dp_byline_sr_book_5?ie=UTF8\u0026field-author=Micha%C3%ABl+Foessel\u0026text=Micha%C3%ABl+Foessel\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Fabien Lamouche",
+      "link": "/s/ref=dp_byline_sr_book_6?ie=UTF8\u0026field-author=Fabien+Lamouche\u0026text=Fabien+Lamouche\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Michel Delattre",
+      "link": "/s/ref=dp_byline_sr_book_7?ie=UTF8\u0026field-author=Michel+Delattre\u0026text=Michel+Delattre\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 22,
+    "depth": 2.4,
+    "width": 14.6
+  },
+  "is_gbook": false
+}
