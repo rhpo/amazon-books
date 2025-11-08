@@ -24,6 +24,13 @@ func isOneEmpty(elements ...string) bool {
 	return slices.Contains(elements, "")
 }
 
+// PostOrder handles the creation of a new order based on the provided JSON input.
+//
+// It parses the JSON body into an Order struct and performs several validations, including checking for required fields,
+// ensuring that the order contains at least one item, and validating each item's type and quantity. If all validations pass,
+// it attempts to create the order using the Service layer. Notifications are sent upon successful order creation, and the
+// complete order data is returned, including any associated OrderItems. If any errors occur during processing, appropriate
+// error responses are returned to the client.
 func (h OrderHandler) PostOrder(c *fiber.Ctx) error {
 	var order models.Order
 
