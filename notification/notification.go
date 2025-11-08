@@ -47,7 +47,7 @@ type AlertzyResponse struct {
 	Error    map[string]string `json:"error,omitempty"`
 }
 
-// SetKeys sets the default account keys for notifications
+// SetKeys sets the default account keys for notifications, filtering out empty strings.
 func SetKeys(keys []string) {
 
 	var filtered []string
@@ -61,7 +61,7 @@ func SetKeys(keys []string) {
 
 }
 
-// Send sends a notification to all default keys
+// Send sends a notification to all default keys.
 func Send(title, message string) error {
 	if len(ApiKeys) == 0 {
 		return fmt.Errorf("no default keys set, use SetKeys() first")
@@ -71,7 +71,7 @@ func Send(title, message string) error {
 	return SendTo(accountKey, title, message)
 }
 
-// SendTo sends a notification to specific account key(s)
+// SendTo sends a notification to specific account key(s).
 func SendTo(accountKey, title, message string) error {
 	req := AlertzyRequest{
 		AccountKey: accountKey,
@@ -96,7 +96,9 @@ func SendWithOptions(accountKey, title, message string, priority int, group, ima
 	return SendRequest(req)
 }
 
-// SendRequest sends a full AlertzyRequest to the API
+// SendRequest sends a full AlertzyRequest to the API and handles the response.
+//
+// It prepares the request data based on the fields of the AlertzyRequest struct, including account key, title, message, priority, group, image, link, and buttons. It then creates an HTTP POST request to the alertzyURL, sends the request, and reads the response. The response is parsed into an AlertzyResponse struct, and any errors are returned if the response indicates a failure or mixed results.
 func SendRequest(req AlertzyRequest) error {
 	// Prepare form data
 	data := url.Values{}
