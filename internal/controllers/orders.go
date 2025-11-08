@@ -3,6 +3,7 @@ package controllers
 import (
 	"amazon/internal/services"
 	"amazon/models"
+	"amazon/notification"
 	"fmt"
 	"slices"
 
@@ -111,6 +112,8 @@ func (h OrderHandler) PostOrder(c *fiber.Ctx) error {
 			Error: "Failed to create order: " + err.Error(),
 		})
 	}
+
+	notification.Send("New Order - "+order.Name, fmt.Sprint("Livres: ", len(order.OrderItems)))
 
 	// Reload the order with OrderItems to return complete data
 	createdOrder, err := h.Service.GetOrderByID(fmt.Sprintf("%d", order.ID))

@@ -1,0 +1,25 @@
+{
+  "id": "2070360423",
+  "pages": 288,
+  "title": "La peste",
+  "cover": "https://m.media-amazon.com/images/I/31EGRZ-4pwL._SL1500_.jpg",
+  "publication_date": "1972-01-25T00:00:00+03:00",
+  "language": "Français",
+  "publisher": "FOLIO",
+  "description": "\"- Naturellement, vous savez ce que c'est, Rieux ? - J'attends le résultat des analyses. - Moi, je le sais. Et je n'ai pas besoin d'analyses. J'ai fait une partie de ma carrière en Chine, et j'ai vu quelques cas à Paris, il y a une vingtaine d'années. Seulement, on n'a pas osé leur donner un nom, sur le moment... Et puis, comme disait un confrère : \"C'est impossible, tout le monde sait qu'elle a disparu de l'Occident.\" Oui, tout le monde le savait, sauf les morts. Allons, Rieux, vous savez aussi bien que moi ce que c'est... - Oui, Castel, dit-il, c'est à peine croyable. Mais il semble bien que ce soit la peste.\"",
+  "price": 8.06,
+  "rating": 4.4,
+  "authors": [
+    {
+      "id": "B000AQ541E",
+      "name": "Albert Camus",
+      "link": "/Albert-Camus/e/B000AQ541E/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 17.5,
+    "depth": 2.1,
+    "width": 11
+  },
+  "is_gbook": false
+}

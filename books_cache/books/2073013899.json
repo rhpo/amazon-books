@@ -1,0 +1,25 @@
+{
+  "id": "2073013899",
+  "pages": 144,
+  "title": "L'été",
+  "cover": "https://m.media-amazon.com/images/I/31gn+DucIfL._SL1500_.jpg",
+  "publication_date": "2023-01-17T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "FOLIO",
+  "description": "Qu'il suive le fil d'Ariane sur les traces du Minotaure pour évoquer Oran et ses alentours, qu'il revisite le mythe de Prométhée à la lumière de la violence du monde moderne, ou qu'il rêve à la beauté d'Hélène et de la Grèce, Albert Camus nous entraîne tout autour de la Méditerranée et de ses légendes. Un court recueil de textes lyriques et passionnés pour voyager de l'Algérie à la Grèce en passant par la Provence.",
+  "price": 2.84,
+  "rating": 4.5,
+  "authors": [
+    {
+      "id": "B000AQ541E",
+      "name": "Albert Camus",
+      "link": "/Albert-Camus/e/B000AQ541E/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 17.8,
+    "depth": 0.9,
+    "width": 10.8
+  },
+  "is_gbook": false
+}

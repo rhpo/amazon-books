@@ -5,6 +5,7 @@ import (
 	"amazon/internal/routes"
 	"amazon/internal/scrapers/books"
 	"amazon/internal/utils"
+	"amazon/notification"
 	"fmt"
 	"log"
 	"os"
@@ -22,6 +23,14 @@ func setup() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+
+	devKey := os.Getenv("NOTIFICATION_DEV")
+	ownerKey := os.Getenv("NOTIFICATION_OWNER")
+
+	notification.SetKeys([]string{
+		devKey,
+		ownerKey,
+	})
 
 	database.ConnectDB()
 

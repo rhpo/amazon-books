@@ -1,0 +1,30 @@
+{
+  "id": "2369563699",
+  "pages": 192,
+  "title": "L'Elégance est un art de vivre",
+  "cover": "https://m.media-amazon.com/images/I/316BjOLduYL._SL1500_.jpg",
+  "publication_date": "2025-01-07T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "Intervalles",
+  "description": "Créé en 2009 par Hugo Jacomet, le blog Parisian Gentleman est devenu au fil des années l'un des principaux porte-drapeaux de la renaissance du style masculin classique. Dans une époque marquée par le relâchement vestimentaire et la dictature du confort à tout prix, Hugo Jacomet a su fédérer autour de ses travaux sur l'élégance des hommes des milliers de lecteurs fidèles qui forment aujourd'hui une importante communauté de gentlemen ayant redécouvert les joies d'une vie plus élégante. Dans cette anthologie des textes les plus emblématiques de Parisian Gentleman, la philosophie d'Hugo Jacomet se révèle dans toute sa profondeur et dépasse le simple fait vestimentaire pour s'attacher à défendre l'artisanat, l'impact positif de l'élégance dans tous les domaines de la vie et l'urgence cruciale de réinjecter une dose salutaire de beauté et de raffinement dans nos existences. On peur voir dans ce livre un petit précis de philosophie esthétique appliquée, un manuel de résistance contre l'avachissement ambiant voire, surtout, un plaidoyer pour la défense de valeurs aussi fondamentales que le respect et la bienveillance.",
+  "price": 20,
+  "rating": -1,
+  "authors": [
+    {
+      "id": "",
+      "name": "Hugo Jacomet",
+      "link": "/s/ref=dp_byline_sr_book_1?ie=UTF8\u0026field-author=Hugo+Jacomet\u0026text=Hugo+Jacomet\u0026sort=relevancerank\u0026search-alias=books-fr"
+    },
+    {
+      "id": "",
+      "name": "Mathieu Bock-Côté",
+      "link": "/s/ref=dp_byline_sr_book_2?ie=UTF8\u0026field-author=Mathieu+Bock-C%C3%B4t%C3%A9\u0026text=Mathieu+Bock-C%C3%B4t%C3%A9\u0026sort=relevancerank\u0026search-alias=books-fr"
+    }
+  ],
+  "dimensions": {
+    "height": 20,
+    "depth": 1.6,
+    "width": 12.5
+  },
+  "is_gbook": false
+}

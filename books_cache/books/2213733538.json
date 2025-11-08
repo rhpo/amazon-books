@@ -1,0 +1,25 @@
+{
+  "id": "2213733538",
+  "pages": 368,
+  "title": "Mon BBcédaire",
+  "cover": "https://m.media-amazon.com/images/I/41WpY1IHo8L._SL1500_.jpg",
+  "publication_date": "2025-01-01T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "Fayard",
+  "description": "Mon BBcédaire est un ouvrage exceptionnel et inédit signé Brigitte Bardot.  \nCe livre rare, où les initiales de l’icône du cinéma et de la cause animale prennent toute leur place, dévoile une collection intime et personnelle de définitions, rédigées entièrement à la main. À travers cet abécédaire, Brigitte Bardot nous invite dans son univers à la fois drôle, incisif et libre. Chaque mot, choisi avec soin, reflète sa vision du monde, ses passions et sa liberté de pensée.  \nBardot n’hésite pas à être insolente, parfois espiègle, mais toujours authentique. Vous découvrirez un côté d'elle encore méconnu, en parfait accord avec l'image rebelle et pionnière qu’elle incarne. Mon BBcédaire est bien plus qu’un simple abécédaire : c’est un voyage dans l’esprit d’une femme unique, qui a marqué son époque par son charme, son engagement et son indépendance. Chaque page, rédigée à la main, est un témoignage de son caractère et de sa personnalité hors du commun.  \nDe plus, Mon BBcédairese distingue par ses illustrations originales, dessinées spécialement pour l’ouvrage par l'artiste Ayoub Bougria. Ces dessins viennent enrichir et sublimer les définitions de Brigitte Bardot, apportant une dimension encore plus personnelle et artistique à ce projet exclusif.",
+  "price": 18.01,
+  "rating": 4.3,
+  "authors": [
+    {
+      "id": "B001JOXYSQ",
+      "name": "Brigitte Bardot",
+      "link": "/Brigitte-Bardot/e/B001JOXYSQ/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 15,
+    "depth": 2,
+    "width": 14.2
+  },
+  "is_gbook": false
+}

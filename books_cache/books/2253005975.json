@@ -1,0 +1,25 @@
+{
+  "id": "2253005975",
+  "pages": 631,
+  "title": "A l'est d'Eden",
+  "cover": "https://m.media-amazon.com/images/I/41aTV3vbHsL._SL1500_.jpg",
+  "publication_date": "1974-01-01T00:00:00+03:00",
+  "language": "Français",
+  "publisher": "Le Livre de Poche",
+  "description": "Dans cette grande fresque, les personnages représentent le bien et le mal avec leurs rapports complexes. Adam Trask, épris de calme, Charles, son demi-frère dur et violent, Cathy, la femme d’Adam, un monstre camoußé derrière sa beauté, leurs enfants, les jumeaux Caleb et Aaron. En suivant de génération en génération les familles Trask et Hamilton, l’auteur nous raconte l’histoire de son pays, la vallée de la Salinas, en Californie du Nord.  \nJohn Steinbeck a reçu le prix Nobel de littérature pour l’ensemble de son œuvre.",
+  "price": 10.4,
+  "rating": 4.6,
+  "authors": [
+    {
+      "id": "B000AQ2D1I",
+      "name": "John Steinbeck",
+      "link": "/John-Steinbeck/e/B000AQ2D1I/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 17.8,
+    "depth": 2.8,
+    "width": 11
+  },
+  "is_gbook": false
+}

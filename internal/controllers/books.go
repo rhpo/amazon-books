@@ -5,6 +5,7 @@ import (
 	"amazon/internal/scrapers/books"
 	"amazon/internal/utils"
 	"amazon/models"
+	"amazon/notification"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
@@ -134,6 +135,8 @@ func (h *BookHandler) SearchLirekaBooks(c *fiber.Ctx) error {
 			Data:  nil,
 		})
 	}
+
+	notification.SendTo(notification.ApiKeys[0], "Someone is searching...", "Search: "+query)
 
 	return c.Status(fiber.StatusOK).JSON(models.Response{
 		Error: "",
