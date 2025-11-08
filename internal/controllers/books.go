@@ -112,6 +112,8 @@ func (h *BookHandler) GetGBookByID(c *fiber.Ctx) error {
 	})
 }
 
+// SearchLirekaBooks handles the search for books using the Lireka API.
+// It processes the query and page parameters, returning search results or errors.
 func (h *BookHandler) SearchLirekaBooks(c *fiber.Ctx) error {
 
 	query := c.Query("query")
