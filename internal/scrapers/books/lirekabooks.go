@@ -18,7 +18,12 @@ type algoliaResponse struct {
 	} `json:"results"`
 }
 
-// LirekaSearchBooks fetches and parses Lireka’s Algolia API results.
+// LirekaSearchBooks fetches and parses results from Lireka’s Algolia API based on a search query.
+//
+// It constructs a POST request to the Algolia API with specific headers and parameters, including the search query and filters.
+// The response is read and unmarshalled into an `algoliaResponse` structure. If results are found, it processes each hit to extract
+// relevant book information, including title, description, publisher, publication date, cover image, number of pages, price, rating,
+// authors, dimensions, and language. The function returns a slice of `models.Book` and an error if any occurs during the process.
 func LirekaSearchBooks(query string) ([]models.Book, error) {
 	urlStr := "https://mwx92vzv2w-dsn.algolia.net/1/indexes/*/queries"
 
@@ -145,6 +150,7 @@ func LirekaSearchBooks(query string) ([]models.Book, error) {
 	return books, nil
 }
 
+// getString converts an input of any type to a string. It returns an empty string if the input is nil.
 func getString(v any) string {
 	if v == nil {
 		return ""
@@ -155,6 +161,7 @@ func getString(v any) string {
 	return fmt.Sprint(v)
 }
 
+// getFloat returns the float64 value of v or 0 if v is nil or not a float64.
 func getFloat(v any) float64 {
 	if v == nil {
 		return 0
