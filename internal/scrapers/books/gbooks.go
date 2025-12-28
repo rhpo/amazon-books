@@ -148,7 +148,7 @@ func gBooksFilter[T []*gbooks.Volume](books T) T {
 
 }
 
-// FetchGBooks searches for books by query.
+// FetchGBooks searches for books by query and returns book thumbnails, a count, and an error if any.
 func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 	if srv == nil {
 		if err := Init(""); err != nil {
