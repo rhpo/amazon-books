@@ -20,8 +20,7 @@ func maxCoverURL(volumeID string) string {
 	return fmt.Sprintf("https://books.google.com/books/publisher/content/images/frontcover/%s?fife=w800-h1200&source=gbs_api", volumeID)
 }
 
-// Init sets up the Google Books service (optionally with an API key).
-// You only need to call this once (e.g. at program startup).
+// Init initializes the Google Books service with an optional API key.
 func Init(key string) error {
 	apiKey = key
 	ctx := context.Background()
@@ -171,7 +170,7 @@ func FetchGBooks(query string, max int) (*[]models.BookThumbnail, int, error) {
 	return CastVolumesToBookThumbnails(filtered), 1, nil
 }
 
-// FetchGBook retrieves one book by its ID.
+// FetchGBook retrieves one book by its ID from the Google Books API.
 func FetchGBook(id string) (*models.Book, string, error) {
 	if srv == nil {
 		if err := Init(""); err != nil {
