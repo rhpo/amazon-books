@@ -17,6 +17,7 @@ func NewBookHandler() *BookHandler {
 	return &BookHandler{}
 }
 
+// GetBooks retrieves a list of books from the Lireka API and returns them in a JSON response.
 func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 	// I was getting the page but now it's only 1 page as we fetch all the data
 	// Directly from the Lireka API.
