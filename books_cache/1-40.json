@@ -1,0 +1,647 @@
+[
+  {
+    "id": "9782017253709",
+    "link": "/book/9782017253709",
+    "title": "Astérix. Vol. 41. Astérix en Lusitanie",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjAxNzI1MzcwOS9kNjk2NGJjYjAxMDYxY2IzOThlNjBkM2UyZWQ3MDM4YjcyZDg1ZDI1LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Fabcaro",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "René Goscinny",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Albert Uderzo",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Didier Conrad",
+        "link": ""
+      }
+    ],
+    "rating": 3.67,
+    "is_gbook": false
+  },
+  {
+    "id": "9782824627151",
+    "link": "/book/9782824627151",
+    "title": "Le boyfriend",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjgyNDYyNzE1MS9lNGNjMGNiZWFkZTIzYzNmYjAyY2FlYjdlMDk2ZjJkMGU4MmYzOGNhLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Freida McFadden",
+        "link": ""
+      }
+    ],
+    "rating": 4.09,
+    "is_gbook": false
+  },
+  {
+    "id": "9782290391174",
+    "link": "/book/9782290391174",
+    "title": "La femme de ménage",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI5MDM5MTE3NC8zYzI4Y2M1ZjJkNGZkMGM2NGNhZjNiM2VkOTg2NjMwYjJhOGQ0NGJhLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Freida McFadden",
+        "link": ""
+      }
+    ],
+    "rating": 4.02,
+    "is_gbook": false
+  },
+  {
+    "id": "9782501189859",
+    "link": "/book/9782501189859",
+    "title": "Votre santé optimisée : le protocole quotidien qui va changer votre vie : adoptez 10 habitudes efficaces pour perdre du poids, maximiser votre énergie, booster votre cerveau, vivre mieux et plus longtemps",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjUwMTE4OTg1OS9hYjYxMmZmN2ZiMmMxZGY5ZWMzN2QwYmRkMmNkOTYwMjllNDViMDNjLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Emilie Steinbach",
+        "link": ""
+      }
+    ],
+    "rating": 4.11,
+    "is_gbook": false
+  },
+  {
+    "id": "9782213733630",
+    "link": "/book/9782213733630",
+    "title": "Ce que veulent les Français",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIxMzczMzYzMC81ZGQ4MzU0ZTJhYjViYzE4YTkyYmU1MzhlOWJhNzhjZTkwODQxOGFlLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Jordan Bardella",
+        "link": ""
+      }
+    ],
+    "rating": 3.17,
+    "is_gbook": false
+  },
+  {
+    "id": "9782707356741",
+    "link": "/book/9782707356741",
+    "title": "La Maison vide - Prix Goncourt 2025",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjcwNzM1Njc0MS81MzAxZjY2Y2FmMDI1ODE1OTA1MDExNGNiODA1ZGE3NTc0MDU3MTRmLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Laurent Mauvignier",
+        "link": ""
+      }
+    ],
+    "rating": 4.33,
+    "is_gbook": false
+  },
+  {
+    "id": "9782073113252",
+    "link": "/book/9782073113252",
+    "title": "Je suis Romane Monnier",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA3MzExMzI1Mi8yY2Q0ZjZkMTJjM2Y5YjI4OTUwNTEzMmNjOTIwOWQzZTFmZTM4NDhjLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Delphine de Vigan",
+        "link": ""
+      }
+    ],
+    "rating": 3.94,
+    "is_gbook": false
+  },
+  {
+    "id": "9782258212299",
+    "link": "/book/9782258212299",
+    "title": "Les ombres du monde",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI1ODIxMjI5OS84MmI1OTkyZWQ0ZWViYzBjYzRkZjg0ZjcyMzM0MjA1ZTIzNzgxODI2LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Michel Bussi",
+        "link": ""
+      }
+    ],
+    "rating": 4.46,
+    "is_gbook": false
+  },
+  {
+    "id": "9782702191477",
+    "link": "/book/9782702191477",
+    "title": "Les années glorieuses. Les belles promesses",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjcwMjE5MTQ3Ny8xMDkxZWJmZDhmOWFmYmMxNDUxZTlhNjkzYjFiODBkMzNjNDQ2Mzk5LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Pierre Lemaitre",
+        "link": ""
+      }
+    ],
+    "rating": 4.29,
+    "is_gbook": false
+  },
+  {
+    "id": "9782080471024",
+    "link": "/book/9782080471024",
+    "title": "Clamser à Tataouine",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA4MDQ3MTAyNC83OTM1ZTkyYjYyOTlkMDFkZjNmZTk2ZDBiNmE2ODA4MTc3NjNjNzVjLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Raphaël Quenard",
+        "link": ""
+      }
+    ],
+    "rating": 3.23,
+    "is_gbook": false
+  },
+  {
+    "id": "9782073080028",
+    "link": "/book/9782073080028",
+    "title": "La nuit au coeur",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA3MzA4MDAyOC82OTc2OTA0ZS5qcGc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Nathacha Appanah",
+        "link": ""
+      }
+    ],
+    "rating": 4.22,
+    "is_gbook": false
+  },
+  {
+    "id": "9782213734699",
+    "link": "/book/9782213734699",
+    "title": "Le journal d'un prisonnier",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIxMzczNDY5OS9lNWY4ZTMzNTc5N2Y5ODM3YTE3NGE5ZDEwMDBiMTdlNjk1MTI3MTIwLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Nicolas Sarkozy",
+        "link": ""
+      }
+    ],
+    "rating": 2.1,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226504395",
+    "link": "/book/9782226504395",
+    "title": "Tant mieux",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjUwNDM5NS8zZmExYjczOTJmMjYwMDA4Yzc4YjA2ODAzM2JmYjYxMWViN2MwMzEwLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Amélie Nothomb",
+        "link": ""
+      }
+    ],
+    "rating": 4,
+    "is_gbook": false
+  },
+  {
+    "id": "9782080442123",
+    "link": "/book/9782080442123",
+    "title": "L'empire : enquête au coeur du rap français",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA4MDQ0MjEyMy9lZWQ1YjE3ODIxM2MyODVhNDYzM2MwMDc5Y2IwYTU2YzJmNmYzMDY0LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Simon Piel",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Paul Deutschmann",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Joan Tilouine",
+        "link": ""
+      }
+    ],
+    "rating": 4.09,
+    "is_gbook": false
+  },
+  {
+    "id": "9782749958194",
+    "link": "/book/9782749958194",
+    "title": "Instinct - Tome 2",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4Mjc0OTk1ODE5NC80ZWFjNDU3YTEwOWU4YjIxOWY0OTI3ODk4OWQ5NWM0YzI5NjhkZWMyLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Basile Monnot",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Charles Compain",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Inoxtag",
+        "link": ""
+      }
+    ],
+    "rating": 4.08,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226470096",
+    "link": "/book/9782226470096",
+    "title": "8,2 secondes",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjQ3MDA5Ni84ODk3ZWJkNjIwZmU1MWQ3ZDMwM2E1Mzc3YTZkYjkzNjI4MGI1NGIzLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Maxime Chattam",
+        "link": ""
+      }
+    ],
+    "rating": 3.73,
+    "is_gbook": false
+  },
+  {
+    "id": "9782246831662",
+    "link": "/book/9782246831662",
+    "title": "Je voulais vivre : Milady n'est pas une femme qui pleure... Elle est de celles qui se vengent.",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI0NjgzMTY2Mi9jYTAzNGJiNWI4NDRjY2Q0YTUyODg4N2VlODQzMTBiODU5YTBlMzU3LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Adélaïde de Clermont-Tonnerre",
+        "link": ""
+      }
+    ],
+    "rating": 4.36,
+    "is_gbook": false
+  },
+  {
+    "id": "9782253127628",
+    "link": "/book/9782253127628",
+    "title": "Une jeunesse au temps de la Shoah : extraits d'Une vie",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI1MzEyNzYyOC84OWYzNzI4Y2VkNDA5N2JmMTRlZjk2NzIxNTQxNGEwNWIyOGI5ZmNiLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Simone Veil",
+        "link": ""
+      }
+    ],
+    "rating": 4.3,
+    "is_gbook": false
+  },
+  {
+    "id": "9782283042496",
+    "link": "/book/9782283042496",
+    "title": "Ne faites plus d'études : apprendre autrement à l'ère de l'IA",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI4MzA0MjQ5Ni9kN2M1MTliNGQ1YWU0ZDhiODYyMzliNTU1YzY0YzM2MGEwZjAxZmI5LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Laurent Alexandre",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Olivier Babeau",
+        "link": ""
+      }
+    ],
+    "rating": 3.39,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226487148",
+    "link": "/book/9782226487148",
+    "title": "Ce que révèlent vos prénoms",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjQ4NzE0OC82MmY4Zjg1ZjZlMmZkZmViOTYwMGIzN2E4OGI2ZDhkNjBiN2E1ZjViLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Anne Tuffigo",
+        "link": ""
+      }
+    ],
+    "rating": 3.74,
+    "is_gbook": false
+  },
+  {
+    "id": "9782213733647",
+    "link": "/book/9782213733647",
+    "title": "Vol au-dessus d'un nid de cocus",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIxMzczMzY0Ny9jN2NlMTk2N2VkNWM4MWFiZjZkODNkNDk0N2ZlMzBiYjIzYWFlZmUwLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Gilles William Goldnadel",
+        "link": ""
+      }
+    ],
+    "rating": 4.33,
+    "is_gbook": false
+  },
+  {
+    "id": "9782213734231",
+    "link": "/book/9782213734231",
+    "title": "Pour le succès des armes de la France",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIxMzczNDIzMS8xMjRjYWFhYTgxMjk4YWI5ZDZhNzQ2YjUzNjEwNThkOTg4MjBlNWMwLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Pierre de Villiers",
+        "link": ""
+      }
+    ],
+    "rating": 4.05,
+    "is_gbook": false
+  },
+  {
+    "id": "9782259322737",
+    "link": "/book/9782259322737",
+    "title": "Les complices du mal",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI1OTMyMjczNy81ODQzOGI0NDViZDJjY2E4MDAyMTAxZWRlNThlMGQwOTUyOTk5ZWI2LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Omar Youssef Souleimane",
+        "link": ""
+      }
+    ],
+    "rating": 3.8,
+    "is_gbook": false
+  },
+  {
+    "id": "9782259324113",
+    "link": "/book/9782259324113",
+    "title": "Une omerta française : secrets d'enfance",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI1OTMyNDExMy9hZGJhYWIzZmQ5MWU0YTZkNzM3YzJkYjAwODc3ZTQ1MTg4ZGFlMTdiLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Roselyne Bachelot",
+        "link": ""
+      }
+    ],
+    "rating": 4.17,
+    "is_gbook": false
+  },
+  {
+    "id": "9782021591163",
+    "link": "/book/9782021591163",
+    "title": "Logocratie",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjAyMTU5MTE2My85ZTEwM2IzMjFkZmYzNjRkNDkzZDc0OTFlY2VlZjg5MjBmYTllYjQ2LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Clément Viktorovitch",
+        "link": ""
+      }
+    ],
+    "rating": 4.46,
+    "is_gbook": false
+  },
+  {
+    "id": "9782709675185",
+    "link": "/book/9782709675185",
+    "title": "Jul : petit dictionnaire",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjcwOTY3NTE4NS8yMGVmYjMzYTdjNDVlNjk1Y2JkMjMwYWNhZGQyNDg0YmU3ZWUzMWU3LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Tarik Chakor",
+        "link": ""
+      }
+    ],
+    "rating": 4.18,
+    "is_gbook": false
+  },
+  {
+    "id": "9782234097711",
+    "link": "/book/9782234097711",
+    "title": "Toutes les vies",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIzNDA5NzcxMS8xMDYwYmI5YjQ0OWVlMWI4MmZkNTIxNjlkN2NkMTg4MDNlZmE2NTE1LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Rebeka Warrior",
+        "link": ""
+      }
+    ],
+    "rating": 3.72,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226479938",
+    "link": "/book/9782226479938",
+    "title": "Le barman du Ritz",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjQ3OTkzOC83N2Y4ZDZmYTRmZDczMzEyMDJkY2ZhYjNlZmE3NjhjM2NmN2M2NDMxLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Philippe Collin",
+        "link": ""
+      }
+    ],
+    "rating": 3.98,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226497949",
+    "link": "/book/9782226497949",
+    "title": "La fille au pair",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjQ5Nzk0OS9hMzIxMmJlYTc4OTEzNjdlOTZiMWJlOWI3MDE1ZDNkNDhhM2JjNjQyLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Sidonie Bonnec",
+        "link": ""
+      }
+    ],
+    "rating": 3.65,
+    "is_gbook": false
+  },
+  {
+    "id": "9782234097001",
+    "link": "/book/9782234097001",
+    "title": "Où les étoiles tombent",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIzNDA5NzAwMS85MzA3ZGE2NzRiZmRkMjcxNWYxNjA3MzkwMzJjNjk3NTQyYTQzNDBjLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Cédric Sapin-Defour",
+        "link": ""
+      }
+    ],
+    "rating": 3.67,
+    "is_gbook": false
+  },
+  {
+    "id": "9782072977374",
+    "link": "/book/9782072977374",
+    "title": "Les enfants sont rois",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA3Mjk3NzM3NC8zY2I2ZDQxYTQ2YjU3YTNhMGMyMDNhZmY4NmNkYjlkODc5NjgzY2QxLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Delphine de Vigan",
+        "link": ""
+      }
+    ],
+    "rating": 4.03,
+    "is_gbook": false
+  },
+  {
+    "id": "9782221284186",
+    "link": "/book/9782221284186",
+    "title": "\"T'es une merde frère\", signé Hanouna : enquête sur celui qui a créé la Trump télé française",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyMTI4NDE4Ni8wMWY3MWQ1NWEzYjhiNjI5YzM3MmIwMGZmYmNlZGQ3MGIwMjAzZWIyLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Jean-Michel Aphatie",
+        "link": ""
+      }
+    ],
+    "rating": 3.49,
+    "is_gbook": false
+  },
+  {
+    "id": "9782749961903",
+    "link": "/book/9782749961903",
+    "title": "Juré, craché",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4Mjc0OTk2MTkwMy80ZWY0MGE0MDcwMjA2MWZkYWQ2MTlkNmZjNjY0NjFjY2QxM2E5NTJiLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Eric Dupond-Moretti",
+        "link": ""
+      }
+    ],
+    "rating": 3.3,
+    "is_gbook": false
+  },
+  {
+    "id": "9782227503014",
+    "link": "/book/9782227503014",
+    "title": "Euh... Comment parler de la mort aux enfants",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNzUwMzAxNC85MWM0NmMyMTJiODFhZDIwZjgyYTEyYzA0NTYxODY4MDdhYjJkMzkzLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Delphine Horvilleur",
+        "link": ""
+      }
+    ],
+    "rating": 3.76,
+    "is_gbook": false
+  },
+  {
+    "id": "9782373091762",
+    "link": "/book/9782373091762",
+    "title": "Le désert de nous-mêmes : le tournant intellectuel et créatif de l'intelligence artificielle",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjM3MzA5MTc2Mi85YjA2OTNmYzBlOGM0ZDZiMmJhNTE4ZThjOTEyYWIyYWQ0YzBmNTk5LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Eric Sadin",
+        "link": ""
+      }
+    ],
+    "rating": 4.51,
+    "is_gbook": false
+  },
+  {
+    "id": "9782075209793",
+    "link": "/book/9782075209793",
+    "title": "La nuit retrouvée",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjA3NTIwOTc5My8yMzA3NjQ1YmUwMmZmNTEzMzM3ZGFiZmYxOGNhMzA2NjViYjU5YzdkLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Pénélope Bagieu",
+        "link": ""
+      },
+      {
+        "id": "",
+        "name": "Lola Lafon",
+        "link": ""
+      }
+    ],
+    "rating": 3.85,
+    "is_gbook": false
+  },
+  {
+    "id": "9782889443024",
+    "link": "/book/9782889443024",
+    "title": "L'ombre des légendes : un ex-commandant du KGB raconte",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4Mjg4OTQ0MzAyNC8xZGI2N2U5ZjA3ODgwYTNiZDUzYTVlZjI5YzgxNTdmNzJhOWIxMTJlLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Sergueï Jirnov",
+        "link": ""
+      }
+    ],
+    "rating": 3.54,
+    "is_gbook": false
+  },
+  {
+    "id": "9782226487186",
+    "link": "/book/9782226487186",
+    "title": "Finistère",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjIyNjQ4NzE4Ni9hYmMwMmJjNDQzZGU4NTYzMzk5ZGRiZDRhYjYyMjA1ZGMxZTE1MjFmLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Anne Berest",
+        "link": ""
+      }
+    ],
+    "rating": 3.77,
+    "is_gbook": false
+  },
+  {
+    "id": "9782810208005",
+    "link": "/book/9782810208005",
+    "title": "Silent Jenny",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjgxMDIwODAwNS9mMGQ3ZWY3ZmVkMTgwMjBkZGViMWIzYWM1YTdjYWYzMWIxOWRjMmIxLmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Mathieu Bablet",
+        "link": ""
+      }
+    ],
+    "rating": 4.08,
+    "is_gbook": false
+  },
+  {
+    "id": "9782246841524",
+    "link": "/book/9782246841524",
+    "title": "Volia : engagée volontaire dans la résistance ukrainienne",
+    "cover": "https://media.lireka.com/L2JhY2tvZmZpY2UvbWVkaWEvaW1hZ2VzL2Jvb2svOTc4MjI0Njg0MTUyNC8xZmQ2MGQwZDRiMGU3OTExOGRiZjc4OWNjMzNkNGEwMDZhMjUxYTI1LmpwZWc=?resize=fit\u0026h=900\u0026w=600\u0026gq=1\u0026v=1",
+    "authors": [
+      {
+        "id": "",
+        "name": "Anastasia Fomitchova",
+        "link": ""
+      }
+    ],
+    "rating": 4.28,
+    "is_gbook": false
+  }
+]

@@ -18,16 +18,20 @@ func NewBookHandler() *BookHandler {
 }
 
 func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
-	page, err := strconv.Atoi(c.Query("page"))
-	if err != nil {
-		return c.Status(fiber.StatusBadRequest).JSON(models.Response{
-			Error: "Missing or invalid 'page' query parameter",
-			Code:  "invalid_params",
-			Data:  nil,
-		})
-	}
+	// I was getting the page but now it's only 1 page as we fetch all the data
+	// Directly from the Lireka API.
 
-	books, pageCount, err := scrapers.FetchBooks(page)
+	// _, err := strconv.Atoi(c.Query("page"))
+
+	// if err != nil {
+	// 	return c.Status(fiber.StatusBadRequest).JSON(models.Response{
+	// 		Error: "Missing or invalid 'page' query parameter",
+	// 		Code:  "invalid_params",
+	// 		Data:  nil,
+	// 	})
+	// }
+
+	books, err := scrapers.FetchBooks("")
 
 	if err != nil {
 		return c.Status(fiber.StatusNotFound).JSON(models.Response{
@@ -43,9 +47,11 @@ func (h *BookHandler) GetBooks(c *fiber.Ctx) error {
 	return c.Status(fiber.StatusOK).JSON(models.Response{
 		Error: "",
 		Code:  "success",
-		Data: models.BooksResponse{
-			PageCount: pageCount,
-			Books:     *books,
+
+		// Modified to LIREKA
+		Data: models.LirekaBooksResponse{
+			PageCount: 1,
+			Books:     books,
 		},
 	})
 }
