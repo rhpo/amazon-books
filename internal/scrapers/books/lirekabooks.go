@@ -255,6 +255,7 @@ func setBasicHeaders(req *http.Request) {
 	req.Header.Set("Origin", "https://www.lireka.com")
 }
 
+// setGetBooksHeaders sets the HTTP headers for a request to fetch books.
 func setGetBooksHeaders(req *http.Request) {
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("Accept-Language", "en-US,en;q=0.6")
@@ -280,6 +281,7 @@ func getString(v any) string {
 	return fmt.Sprint(v)
 }
 
+// getFloat returns the float64 value of v or 0 if v is nil or not a float64.
 func getFloat(v any) float64 {
 	if v == nil {
 		return 0
