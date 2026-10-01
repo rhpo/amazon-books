@@ -105,6 +105,8 @@ func (h OrderHandler) PostOrder(c *fiber.Ctx) error {
 	// 	}
 	// 	order.Screenshot = fileName
 
+	notification.Send("New Order - "+order.Name, fmt.Sprint("Livres: ", len(order.OrderItems)))
+
 	err := h.Service.CreateOrder(&order)
 
 	if err != nil {
@@ -113,7 +115,6 @@ func (h OrderHandler) PostOrder(c *fiber.Ctx) error {
 		})
 	}
 
-	notification.Send("New Order - "+order.Name, fmt.Sprint("Livres: ", len(order.OrderItems)))
 
 	// Reload the order with OrderItems to return complete data
 	createdOrder, err := h.Service.GetOrderByID(fmt.Sprintf("%d", order.ID))

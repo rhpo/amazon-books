@@ -1,0 +1,30 @@
+{
+  "id": "2070650642",
+  "pages": 192,
+  "title": "VENDREDI OU LA VIE SAUVAGE",
+  "cover": "https://m.media-amazon.com/images/I/51zxa7isH8L._SL1500_.jpg",
+  "publication_date": "2012-01-02T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "GALLIMARD JEUNE",
+  "description": "Une aventure inoubliable, une ode à la liberté et à la nature  \nLe 29 septembre 1759, le navire \" La Virginie\" fait naufrage. Seul rescapé, Robinson échoue sur une île déserte où il tente de survivre à une nature hostile en déployant des trésors d'ingéniosité. Mais son existence solitaire bascule le jour où un autre être humain fait son apparition sur l'île : Vendredi, le sauvage...",
+  "price": 0,
+  "rating": -1,
+  "authors": [
+    {
+      "id": "B000APBLBM",
+      "name": "Michel Tournier",
+      "link": "/Michel-Tournier/e/B000APBLBM/ref=dp_byline_cont_book_1"
+    },
+    {
+      "id": "B004N7AKRO",
+      "name": "Jean-Claude Götting",
+      "link": "/Jean-Claude-G%C3%B6tting/e/B004N7AKRO/ref=dp_byline_cont_book_2"
+    }
+  ],
+  "dimensions": {
+    "height": 18,
+    "depth": 1.2,
+    "width": 12.5
+  },
+  "is_gbook": false
+}

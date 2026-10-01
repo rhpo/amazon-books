@@ -1,0 +1,25 @@
+{
+  "id": "2070612759",
+  "pages": 120,
+  "title": "LE PETIT PRINCE",
+  "cover": "https://m.media-amazon.com/images/I/41dzKqH6nAL._SL1500_.jpg",
+  "publication_date": "2007-01-15T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "Gallimard",
+  "description": "7x5x0.10 (Inches)",
+  "price": 7.11,
+  "rating": 4.7,
+  "authors": [
+    {
+      "id": "B010MJ8OFQ",
+      "name": "Antoine de Saint-Exupéry",
+      "link": "/Antoine-de-Saint-Exup%C3%A9ry/e/B010MJ8OFQ/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 17.8,
+    "depth": 0.8,
+    "width": 12.5
+  },
+  "is_gbook": false
+}

@@ -1,0 +1,25 @@
+{
+  "id": "202155046X",
+  "pages": 168,
+  "title": "L'I.A. expliquée aux humains",
+  "cover": "https://m.media-amazon.com/images/I/51xDkolZ0iL._SL1500_.jpg",
+  "publication_date": "2024-01-06T00:00:00+02:00",
+  "language": "Français",
+  "publisher": "SEUIL",
+  "description": "Les prouesses de l’intelligence artificielle (IA) suscitent tour à tour enthousiasme, fascination et effroi. Jean-Gabriel Ganascia, spécialiste incontesté de la discipline, nous éclaire sur ce qui est devenu un véritable phénomène.\n\nSans les premiers algorithmes imaginés à Babylone et la machine arithmétique de Blaise Pascal, l’IA n’existerait pas, mais sa naissance remonte au milieu du xxe siècle, peu après l’invention de la cybernétique. Les années 2010 marquent un tournant, grâce au déploiement de l’apprentissage profond dont ChatGPT est l’illustration. En reparcourant l’histoire de l’IA, nous nous approprions ses principes de fonctionnement, ses applications (médecine, exploration spatiale, agriculture), ses succès et aussi ses revers.\n\nEt l’auteur discute les questions d’ordre éthique qui nous taraudent tous : les machines nous dépasseront-elles ? Acquerront-elles une conscience ? Supprimeront-elles des emplois ? Nous feront-elles – ou nous font-elles déjà – entrer dans une société de surveillance ? Comment anticiper les risques majeurs auxquels elles nous exposent ?\n\nJean-Gabriel Ganascia est professeur à Sorbonne Université, où il mène des recherches sur l’intelligence artificielle au LIP6. Il a présidé le Comité d’éthique du CNRS et a déjà publié divers ouvrages au Seuil, dont Le Mythe de la Singularité, qui a reçu le prix Roberval en 2017.",
+  "price": 13.5,
+  "rating": 4.4,
+  "authors": [
+    {
+      "id": "B001K7JY5E",
+      "name": "Jean-Gabriel Ganascia",
+      "link": "/Jean-Gabriel-Ganascia/e/B001K7JY5E/ref=dp_byline_cont_book_1"
+    }
+  ],
+  "dimensions": {
+    "height": 18.4,
+    "depth": 1.7,
+    "width": 13.1
+  },
+  "is_gbook": false
+}

@@ -32,6 +32,8 @@ func setup() {
 		ownerKey,
 	})
 
+	fmt.Printf("Api keys available: Dev(%s) Owner(%s)\n", devKey == "", ownerKey == "")
+
 	database.ConnectDB()
 
 	// make uploads directory if not exists
